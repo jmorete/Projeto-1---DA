@@ -1,7 +1,8 @@
 #include "Graph.h"
 #include "Data.h"
+#include "build_graph.h"
 
-Graph<int>* build_Graph(const Data &data) {
+Graph<int>* buildGraph(const Data &data) {
 
     auto *g = new Graph<int>();
 
