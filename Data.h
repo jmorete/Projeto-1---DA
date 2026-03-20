@@ -4,27 +4,44 @@
 #include <vector>
 #include <string>
 
+struct Submission {
+    int id;
+    std::string title;
+    std::string author;
+    std::string email;
+    int primaryTopic;
+    int secondaryTopic;
+};
+
+struct Reviewer {
+    int id;
+    std::string name;
+    std::string email;
+    int primaryExpertise;
+    int secondaryExpertise;
+};
+
 class Data {
 private:
-    std::vector<> reviewers;
-    std::vector<> submissions;
+    std::vector<Reviewer> reviewers;
+    std::vector<Submission> submissions;
     int minReviewersPerSubmission;
     int maxReviewersPerReviewer;
     int generateAssignments;
     int riskAnalysis;
     std::string outputFileName;
 public:
-    std::vector<> getReviewers() const;
+    std::vector<Reviewer> getReviewers() const;
 
-    void setReviewers(const std::vector<> &reviewers);
+    void setReviewers(const std::vector<Reviewer> &reviewers);
 
-    void addReviewer(const &reviewer);
+    void addReviewer(const Reviewer &reviewer);
 
-    std::vector<> getSubmissions() const;
+    std::vector<Submission> getSubmissions() const;
 
-    void setSubmissions(const std::vector<> &submissions);
+    void setSubmissions(const std::vector<Submission> &submissions);
 
-    void addSubmission(const &submission);
+    void addSubmission(const Submission &submission);
 
     int getMinReviewersPerSubmission() const;
 

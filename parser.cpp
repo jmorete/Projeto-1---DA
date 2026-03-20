@@ -2,6 +2,7 @@
 #include <sstream>
 #include <iostream>
 #include "Data.h"
+#include "parser.h"
 
 Data parse(const std::string &filename) {
     Data data;
@@ -27,6 +28,16 @@ Data parse(const std::string &filename) {
             else {
                 continue;
             }
+        }
+        if (section == "reviewers"){
+            std::istringstream iss(line);
+            Reviewer reviewer;
+            std::string attribute;
+            std::vector<std::string> attributes;
+            while (std::getline(iss, attribute, ',')) {
+                attributes.push_back(attribute);
+            }
+            
         }
     }
 
