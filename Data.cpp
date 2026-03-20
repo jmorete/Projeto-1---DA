@@ -1,43 +1,43 @@
 #include "Data.h"
 
-std::vector<> Data::getReviewers() const {
+std::vector<Reviewer> Data::getReviewers() const {
     return reviewers;
 }
 
-void Data::setReviewers(const std::vector<> &reviewers) {
+void Data::setReviewers(const std::vector<Reviewer> &reviewers) {
     this->reviewers = reviewers;
 }
 
-void Data::addReviewer(const &reviewer) {
+void Data::addReviewer(const Reviewer &reviewer) {
     this->reviewers.push_back(reviewer);
 }
 
-std::vector<> Data::getSubmissions() const {
+std::vector<Submission> Data::getSubmissions() const {
     return submissions;
 }
 
-void Data::setSubmissions(const std::vector<> &submissions) {
+void Data::setSubmissions(const std::vector<Submission> &submissions) {
     this->submissions = submissions;
 }
 
-void Data::addSubmission(const &submission) {
+void Data::addSubmission(const Submission &submission) {
     this->submissions.push_back(submission);
 }
 
-int Data::getMinReviewersPerSubmission() const {
-    return minReviewersPerSubmission;
+int Data::getMinReviewsPerSubmission() const {
+    return minReviewsPerSubmission;
 }
 
-void Data::setMinReviewersPerSubmission(int minReviewersPerSubmission) {
-    this->minReviewersPerSubmission = minReviewersPerSubmission;
+void Data::setMinReviewsPerSubmission(int minReviewsPerSubmission) {
+    this->minReviewsPerSubmission = minReviewsPerSubmission;
 }
 
-int Data::getMaxReviewersPerReviewer() const {
-    return maxReviewersPerReviewer;
+int Data::getMaxReviewsPerReviewer() const {
+    return maxReviewsPerReviewer;
 }
 
-void Data::setMaxReviewersPerReviewer(int maxReviewersPerReviewer) {
-    this->maxReviewersPerReviewer = maxReviewersPerReviewer;
+void Data::setMaxReviewsPerReviewer(int maxReviewsPerReviewer) {
+    this->maxReviewsPerReviewer = maxReviewsPerReviewer;
 }
 
 int Data::getGenerateAssignments() const {

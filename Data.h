@@ -25,8 +25,8 @@ class Data {
 private:
     std::vector<Reviewer> reviewers;
     std::vector<Submission> submissions;
-    int minReviewersPerSubmission;
-    int maxReviewersPerReviewer;
+    int minReviewsPerSubmission;
+    int maxReviewsPerReviewer;
     int generateAssignments;
     int riskAnalysis;
     std::string outputFileName;
@@ -43,13 +43,13 @@ public:
 
     void addSubmission(const Submission &submission);
 
-    int getMinReviewersPerSubmission() const;
+    int getMinReviewsPerSubmission() const;
 
-    void setMinReviewersPerSubmission(int minReviewersPerSubmission);
+    void setMinReviewsPerSubmission(int minReviewsPerSubmission);
 
-    int getMaxReviewersPerReviewer() const;
+    int getMaxReviewsPerReviewer() const;
 
-    void setMaxReviewersPerReviewer(int maxReviewersPerReviewer);
+    void setMaxReviewsPerReviewer(int maxReviewsPerReviewer);
 
     int getGenerateAssignments() const;
 

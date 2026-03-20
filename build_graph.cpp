@@ -15,7 +15,7 @@ Graph<int>* buildGraph(const Data &data) {
     // add submission nodes
     for (Submission &s : data.getSubmissions()) {
         g->addVertex(s.id);
-        g->addEdge(SOURCE, s.id, data.getMinReviewersPerSubmission());
+        g->addEdge(SOURCE, s.id, data.getMinReviewsPerSubmission());
     }
 
     // add reviewer nodes
@@ -23,7 +23,7 @@ Graph<int>* buildGraph(const Data &data) {
         g->addVertex(r.id + 100000); // to avoid ID collision
 
         g->addEdge(r.id + 100000, SINK,
-            data.getMaxReviewersPerReviewer());
+            data.getMaxReviewsPerReviewer());
     }
 
     // no connection yet between submission and reviewer
