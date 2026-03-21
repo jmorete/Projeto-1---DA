@@ -102,5 +102,9 @@ void edmondsKarp(Graph<T> *g, int source, int target) {
         }
     }
 
-
+    
 }
+
+template void edmondsKarp<int>(Graph<int> *g, int s, int t);
+
+

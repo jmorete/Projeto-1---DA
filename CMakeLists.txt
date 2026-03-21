@@ -13,6 +13,7 @@ set(SOURCE_FILES
         max_flow.cpp
         build_graph.cpp
         menu.cpp
+        output.cpp
 )
 
 add_executable(myProg ${SOURCE_FILES})

@@ -4,6 +4,6 @@
 #include "Graph.h"
 #include "Data.h"
 
-Graph<int>* build_Graph(const Data &data);
+Graph<int>* buildGraph(const Data &data);
 
 #endif

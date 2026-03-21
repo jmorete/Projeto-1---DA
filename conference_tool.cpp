@@ -3,6 +3,8 @@
 #include "Data.h"
 #include "parser.h"
 #include "max_flow.h"
+#include "build_graph.h"
+#include "output.h"
 
 
 int main(int argc, char *argv[]){
@@ -11,12 +13,11 @@ int main(int argc, char *argv[]){
     }
     if (argc == 4){
         Data data = parse(argv[2]);
-        for (auto &s : data.getSubmissions()) {
-            std::cout << "Submission " << s.id << ": " << s.title << std::endl;
+        Graph<int> *g = buildGraph(data);
+        edmondsKarp(g, -1000, -2000);
+        if (data.getGenerateAssignments()) {
+            writeOutput(argv[3], g, data);
         }
-        //Graph* g = buildGraph(data);
-        //edmondsKarp(g);
-        //writeOutput(argv[3]);
     }
     else {
         std::cout << "Invalid number of arguments." << std::endl;
