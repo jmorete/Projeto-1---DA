@@ -3,6 +3,7 @@
 #include "Data.h"
 #include "parser.h"
 #include "max_flow.h"
+#include "build_graph.h"
 
 
 int main(int argc, char *argv[]){
