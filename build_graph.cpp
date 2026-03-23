@@ -50,7 +50,7 @@ Graph<int>* buildGraph(const Data &data) {
 
             if (s.primaryTopic == r.primaryExpertise) {
                 g->addEdge(
-                    s.id | PRIMARY_TOPIC_MASK,
+                    s.id | PRIMARY_TOPIC_MASK | SOURCE_CONNECTED_MASK,
                     r.id | REVIEWER_MASK | PRIMARY_TOPIC_MASK,
                     1
                 );
