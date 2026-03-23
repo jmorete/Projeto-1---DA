@@ -5,6 +5,7 @@
 #include "max_flow.h"
 #include "build_graph.h"
 #include "output.h"
+#include "id.h"
 
 
 int main(int argc, char *argv[]){
@@ -14,7 +15,7 @@ int main(int argc, char *argv[]){
     if (argc == 4){
         Data data = parse(argv[2]);
         Graph<int> *g = buildGraph(data);
-        edmondsKarp(g, -1000, -2000);
+        edmondsKarp(g, SOURCE_ID, SINK_ID);
         if (data.getGenerateAssignments()) {
             writeOutput(argv[3], g, data);
         }

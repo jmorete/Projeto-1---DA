@@ -10,7 +10,7 @@ struct Submission {
     std::string author;
     std::string email;
     int primaryTopic;
-    int secondaryTopic;
+    int secondaryTopic = -1; // default value indicating no secondary topic
 };
 
 struct Reviewer {
@@ -18,7 +18,7 @@ struct Reviewer {
     std::string name;
     std::string email;
     int primaryExpertise;
-    int secondaryExpertise;
+    int secondaryExpertise = -1; // default value indicating no secondary expertise
 };
 
 class Data {

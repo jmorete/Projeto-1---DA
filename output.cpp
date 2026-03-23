@@ -1,4 +1,5 @@
 #include "output.h"
+#include <id.h>
 #include <fstream>
 #include <iostream>
 
@@ -35,10 +36,19 @@ bool sortByFailedSubmissionId(const failedSubmission &a, const failedSubmission 
     return a.submissionId < b.submissionId;
 }
 
-int getDomain(int submissionId, const Data &data) {
+int getPrimaryDomain(int submissionId, const Data &data) {
     for (const auto &submission : data.getSubmissions()) {
         if (submission.id == submissionId) {
             return submission.primaryTopic;
+        }
+    }
+    return -1; 
+}
+
+int getSecondaryDomain(int submissionId, const Data &data){
+    for (const auto &submission : data.getSubmissions()) {
+        if (submission.id == submissionId) {
+            return submission.secondaryTopic;
         }
     }
     return -1; 
@@ -53,17 +63,28 @@ void writeOutput(const std::string &filename, Graph<int> *g, const Data &data) {
     std::vector<failedSubmission> failedSubmissions;
     for (auto v : g->getVertexSet()) {
         int submissionId = v->getInfo();
-        if (submissionId <= 100000 && submissionId > 0) { 
-            for (auto e : v->getAdj()) {
-                if (e->getFlow() > 0) { 
-                    assignments.push_back({submissionId, e->getDest()->getInfo() - 100000, getDomain(submissionId, data)});
+        if (!(submissionId & REVIEWER_MASK)){
+            if ((submissionId & PRIMARY_TOPIC_MASK) || (submissionId & SECONDARY_TOPIC_MASK)) { 
+                for (auto e : v->getAdj()) {
+                    if (e->getFlow() > 0) { 
+                        if (submissionId & PRIMARY_TOPIC_MASK){
+                            assignments.push_back({submissionId & ID_MASK, e->getDest()->getInfo() & ID_MASK, getPrimaryDomain(submissionId & ID_MASK, data)});
+                        }
+                        else {
+                            assignments.push_back({submissionId & ID_MASK, e->getDest()->getInfo() & ID_MASK, getSecondaryDomain(submissionId & ID_MASK, data)});
+                        }
+                    }
                 }
             }
-            auto incoming = v->getIncoming()[0];
-            int assignedReviews = incoming->getFlow();
-            int requiredReviews = incoming->getWeight();
-            if (assignedReviews < requiredReviews) {
-                failedSubmissions.push_back({submissionId, getDomain(submissionId, data), requiredReviews - assignedReviews});
+            if (submissionId & SOURCE_CONNECTED_MASK) {
+                auto incoming = v->getIncoming();
+                if (!incoming.empty()){
+                int assignedReviews = incoming[0]->getFlow();
+                int requiredReviews = incoming[0]->getWeight();
+                    if (assignedReviews < requiredReviews) {
+                        failedSubmissions.push_back({submissionId & ID_MASK, getPrimaryDomain(submissionId & ID_MASK, data), requiredReviews - assignedReviews});
+                    }
+                }
             }
         }
     }

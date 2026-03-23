@@ -1,0 +1,12 @@
+#ifndef ID_H
+#define ID_H
+
+#define ID_MASK 0xFFFF
+#define REVIEWER_MASK 0x10000
+#define PRIMARY_TOPIC_MASK 0x20000
+#define SECONDARY_TOPIC_MASK 0x40000
+#define SOURCE_CONNECTED_MASK 0x80000
+#define SOURCE_ID 0x100000
+#define SINK_ID 0x200000
+
+#endif 
