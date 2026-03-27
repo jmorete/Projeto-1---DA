@@ -90,7 +90,7 @@ Data parse(const std::string &filename) {
                 data.setRiskAnalysis(std::stoi(attributes[1]));
             }
             else if (attributes[0] == "OutputFileName") {
-                data.setOutputFileName(attributes[1]);
+                data.setOutputFileName(attributes[1].substr(1,attributes[1].length()-2)); // remove as aspas
             }
         }
     }

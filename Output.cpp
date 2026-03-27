@@ -3,18 +3,6 @@
 #include <fstream>
 #include <iostream>
 
-struct Assignment {
-    int submissionId;
-    int reviewerId;
-    int domain;
-};
-
-struct failedSubmission {
-    int submissionId;
-    int domain;
-    int missingReviews;
-};
-
 bool sortBySubmissionId(const Assignment &a, const Assignment &b) {
     return a.submissionId < b.submissionId;
 }
@@ -23,7 +11,24 @@ bool sortByReviewerId(const Assignment &a, const Assignment &b) {
     return a.reviewerId < b.reviewerId;
 }
 
-void sortAssignments(std::vector<Assignment> &assignments, const std::string &sortBy) {
+std::vector<Assignment> Output::getAssignments() {
+    return assignments;
+}
+
+void Output::setAssignments(const std::vector<Assignment> &assignments) {
+    this->assignments = assignments;
+}
+
+std::vector<failedSubmission> Output::getFailedSubmissions() {
+    return failedSubmissions;
+}
+
+void Output::setFailedSubmissions(const std::vector<failedSubmission> &failsub) {
+    this->failedSubmissions = failsub;
+}
+
+
+void Output::sortAssignments(const std::string &sortBy) {
     if (sortBy == "submission") {
         std::sort(assignments.begin(), assignments.end(), sortBySubmissionId);
     } 
@@ -36,31 +41,7 @@ bool sortByFailedSubmissionId(const failedSubmission &a, const failedSubmission 
     return a.submissionId < b.submissionId;
 }
 
-int getPrimaryDomain(int submissionId, const Data &data) {
-    for (const auto &submission : data.getSubmissions()) {
-        if (submission.id == submissionId) {
-            return submission.primaryTopic;
-        }
-    }
-    return -1; 
-}
-
-int getSecondaryDomain(int submissionId, const Data &data){
-    for (const auto &submission : data.getSubmissions()) {
-        if (submission.id == submissionId) {
-            return submission.secondaryTopic;
-        }
-    }
-    return -1; 
-}
-void writeOutput(const std::string &filename, Graph<int> *g, const Data &data) {
-    std::ofstream out(filename);
-    if (!out.is_open()) {
-        std::cerr << "Error opening file for writing: " << filename << std::endl;
-        return;
-    }
-    std::vector<Assignment> assignments;
-    std::vector<failedSubmission> failedSubmissions;
+void Output::generateOutput(Graph<int> *g, Data &data) {
     for (auto v : g->getVertexSet()) {
         int submissionId = v->getInfo();
         if (!(submissionId & REVIEWER_MASK)){
@@ -68,10 +49,10 @@ void writeOutput(const std::string &filename, Graph<int> *g, const Data &data) {
                 for (auto e : v->getAdj()) {
                     if (e->getFlow() > 0) { 
                         if (submissionId & PRIMARY_TOPIC_MASK){
-                            assignments.push_back({submissionId & ID_MASK, e->getDest()->getInfo() & ID_MASK, getPrimaryDomain(submissionId & ID_MASK, data)});
+                            assignments.push_back({submissionId & ID_MASK, e->getDest()->getInfo() & ID_MASK, data.getPrimaryDomain(submissionId & ID_MASK)});
                         }
                         else {
-                            assignments.push_back({submissionId & ID_MASK, e->getDest()->getInfo() & ID_MASK, getSecondaryDomain(submissionId & ID_MASK, data)});
+                            assignments.push_back({submissionId & ID_MASK, e->getDest()->getInfo() & ID_MASK, data.getSecondaryDomain(submissionId & ID_MASK)});
                         }
                     }
                 }
@@ -82,21 +63,28 @@ void writeOutput(const std::string &filename, Graph<int> *g, const Data &data) {
                 int assignedReviews = incoming[0]->getFlow();
                 int requiredReviews = incoming[0]->getWeight();
                     if (assignedReviews < requiredReviews) {
-                        failedSubmissions.push_back({submissionId & ID_MASK, getPrimaryDomain(submissionId & ID_MASK, data), requiredReviews - assignedReviews});
+                        failedSubmissions.push_back({submissionId & ID_MASK, data.getPrimaryDomain(submissionId & ID_MASK), requiredReviews - assignedReviews});
                     }
                 }
             }
         }
     }
+}
 
+void Output::writeToFile(const std::string &filename) {
+    std::ofstream out(filename);
+    if (!out.is_open()) {
+        std::cerr << "Error opening file for writing: " << filename << std::endl;
+        return;
+    }
     if (!assignments.empty()) {
         out << "#SubmissionId,ReviewerId,Match" << std::endl;
-        sortAssignments(assignments, "submission");
+        sortAssignments("submission");
         for (const auto &a : assignments) {
             out << a.submissionId << ", " << a.reviewerId << ", " << a.domain << std::endl;
         }
         out << "#ReviewerId,SubmissionId,Match" << std::endl;
-        sortAssignments(assignments, "reviewer");
+        sortAssignments("reviewer");
         for (const auto &a : assignments) {
             out << a.reviewerId << ", " << a.submissionId << ", " << a.domain << std::endl;
         }
@@ -110,6 +98,31 @@ void writeOutput(const std::string &filename, Graph<int> *g, const Data &data) {
             out << f.submissionId << ", " << f.domain << ", " << f.missingReviews << std::endl;
         }
     }
-
     out.close(); // Close the output file
+}
+
+void Output::printOutput() {
+    if (!assignments.empty()) {
+        std::cout << "\n=== Assignments ===\n\n";
+        std::cout << "SubmissionId, ReviewerId, Match" << std::endl;
+        sortAssignments("submission");
+        for (const auto &a : assignments) {
+            std::cout << a.submissionId << ", " << a.reviewerId << ", " << a.domain << std::endl;
+        }
+        std::cout << "ReviewerId,SubmissionId,Match" << std::endl;
+        sortAssignments("reviewer");
+        for (const auto &a : assignments) {
+            std::cout << a.reviewerId << ", " << a.submissionId << ", " << a.domain << std::endl;
+        }
+        std::cout << "\nTotal: " << assignments.size() << std::endl;
+    }
+
+    if (!failedSubmissions.empty()) {
+        std::cout << "\n=== Failed Submissions ===\n\n";
+        std::cout << "SubmissionId,Domain,MissingReviews" << std::endl;
+        std::sort(failedSubmissions.begin(), failedSubmissions.end(), sortByFailedSubmissionId);
+        for (const auto &f : failedSubmissions) {
+            std::cout << f.submissionId << ", " << f.domain << ", " << f.missingReviews << std::endl;
+        }
+    }
 }

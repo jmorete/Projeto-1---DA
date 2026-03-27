@@ -62,6 +62,13 @@ public:
     const std::string getOutputFileName() const;
 
     void setOutputFileName(const std::string &outputFileName);
+
+    int getPrimaryDomain(int submissionId);
+    int getSecondaryDomain(int submissionId);
+
+    void printSubmissions() const;
+    void printReviewers() const;
+    void printParameters() const;
 };
 
 #endif 
