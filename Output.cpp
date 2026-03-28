@@ -125,4 +125,5 @@ void Output::printOutput() {
             std::cout << f.submissionId << ", " << f.domain << ", " << f.missingReviews << std::endl;
         }
     }
+    std::cout << '\n';
 }

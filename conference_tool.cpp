@@ -6,13 +6,13 @@
 #include "build_graph.h"
 #include "output.h"
 #include "id.h"
-//#include "menu.h"
+#include "menu.h"
 
 
 int main(int argc, char *argv[]){
     if (argc == 1){
-        //Menu menu;
-        //menu.run();
+        Menu menu;
+        menu.run();
     }
     if (argc == 4){
         Data data = parse(argv[2]);
