@@ -30,6 +30,11 @@ int Data::getMinReviewsPerSubmission() const {
 
 void Data::setMinReviewsPerSubmission(int minReviewsPerSubmission) {
     this->minReviewsPerSubmission = minReviewsPerSubmission;
+    minReviewsPerSubmissionSet = true;
+}
+
+bool Data::minReviewsPerSubmissionIsSet() const {
+    return minReviewsPerSubmissionSet;
 }
 
 int Data::getMaxReviewsPerReviewer() const {
@@ -38,6 +43,11 @@ int Data::getMaxReviewsPerReviewer() const {
 
 void Data::setMaxReviewsPerReviewer(int maxReviewsPerReviewer) {
     this->maxReviewsPerReviewer = maxReviewsPerReviewer;
+    maxReviewsPerReviewerSet = true;
+}
+
+bool Data::maxReviewsPerReviewerIsSet() const {
+    return maxReviewsPerReviewerSet;
 }
 
 int Data::getGenerateAssignments() const {
@@ -46,6 +56,11 @@ int Data::getGenerateAssignments() const {
 
 void Data::setGenerateAssignments(int generateAssignments) {
     this->generateAssignments = generateAssignments;
+    generateAssignmentsSet = true;
+}
+
+bool Data::generateAssignmentsIsSet() const {
+    return generateAssignmentsSet;
 }
 
 int Data::getRiskAnalysis() const {
@@ -54,6 +69,11 @@ int Data::getRiskAnalysis() const {
 
 void Data::setRiskAnalysis(int riskAnalysis) {
     this->riskAnalysis = riskAnalysis;
+    riskAnalysisSet = true;
+}
+
+bool Data::riskAnalysisIsSet() const {
+    return riskAnalysisSet;
 }
 
 const std::string Data::getOutputFileName() const {

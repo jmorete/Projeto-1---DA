@@ -26,10 +26,14 @@ private:
     std::vector<Reviewer> reviewers;
     std::vector<Submission> submissions;
     int minReviewsPerSubmission;
+    bool minReviewsPerSubmissionSet = false;
     int maxReviewsPerReviewer;
+    bool maxReviewsPerReviewerSet = false;
     int generateAssignments;
+    bool generateAssignmentsSet = false;
     int riskAnalysis;
-    std::string outputFileName;
+    bool riskAnalysisSet = false;
+    std::string outputFileName = "output.csv"; // default filename
 public:
     std::vector<Reviewer> getReviewers() const;
 
@@ -47,17 +51,25 @@ public:
 
     void setMinReviewsPerSubmission(int minReviewsPerSubmission);
 
+    bool minReviewsPerSubmissionIsSet() const;
+
     int getMaxReviewsPerReviewer() const;
 
     void setMaxReviewsPerReviewer(int maxReviewsPerReviewer);
+
+    bool maxReviewsPerReviewerIsSet() const;
 
     int getGenerateAssignments() const;
 
     void setGenerateAssignments(int generateAssignments);
 
+    bool generateAssignmentsIsSet() const;
+
     int getRiskAnalysis() const;
 
     void setRiskAnalysis(int riskAnalysis);
+
+    bool riskAnalysisIsSet() const;
 
     const std::string getOutputFileName() const;
 

@@ -13,7 +13,10 @@ int main(int argc, char *argv[]){
         //createMenu();
     }
     if (argc == 4){
-        Data data = parse(argv[2]);
+        Data data;
+        if (!parse(argv[2], data)){
+            return -1;
+        }
         Graph<int> *g = buildGraph(data);
         edmondsKarp(g, SOURCE_ID, SINK_ID);
         if (data.getGenerateAssignments()) {

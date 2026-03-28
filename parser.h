@@ -5,7 +5,7 @@
 
 
 
-Data parse(const std::string &filename);
+bool parse(const std::string &filename, Data &data);
 
 #endif
 
