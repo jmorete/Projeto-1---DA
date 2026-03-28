@@ -26,6 +26,7 @@ public:
     bool hasAssigned();
 
     static std::string getInput();
+    static void waitForEnter();
 
     void runAssignments();
 

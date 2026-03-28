@@ -9,7 +9,7 @@
 #include <max_flow.h>
 #include <output.h>
 
-#include <conio.h>
+#include <limits>
 
 using namespace std;
 
@@ -68,6 +68,15 @@ std::string Menu::getInput() {
     cin >> s;
     return s;
 }
+
+
+
+void Menu::waitForEnter() {
+    std::cout << "\nPress ENTER to continue...";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cin.get();
+}
+
 
 void Menu::runAssignments() {
     Graph<int> *g = buildGraph(data);
@@ -131,7 +140,9 @@ void Menu::loadFileMenu() {
         return;
     }
     cout << "[INFO] Parsing file...\n\n";
-    setData(parse(i));
+    Data d;
+    if (!parse(i,d)) return;
+    setData(d);
     setFile(i);
     setOutput({});
     setState(0);
@@ -144,20 +155,17 @@ void Menu::viewDataMenu() {
     else if (i == "1") {
         if (!hasFile()) return;
         data.printSubmissions();
-        cout << "Press ENTER to continue...";
-        getch();
+        waitForEnter();
     }
     else if (i == "2") {
         if (!hasFile()) return;
         data.printReviewers();
-        cout << "Press ENTER to continue...";
-        getch();
+        waitForEnter();
     }
     else if (i == "3") {
         if (!hasFile()) return;
         data.printParameters();
-        cout << "Press ENTER to continue...";
-        getch();
+        waitForEnter();
     }
     else cout << "[ERROR] Invalid option." << "\n\n";
 }
@@ -183,14 +191,12 @@ void Menu::viewOutputMenu() {
     else if (i == "1") {
         if (!hasAssigned()) return;
         output.printOutput();
-        cout << "Press ENTER to continue...";
-        getch();
+        waitForEnter();
     }
     else if (i == "2") {
         if (!hasAssigned()) return;
         //print risk analysis
-        cout << "Press ENTER to continue...";
-        getch();
+        waitForEnter();
     }
     else cout << "[ERROR] Invalid option." << "\n\n";
 }
