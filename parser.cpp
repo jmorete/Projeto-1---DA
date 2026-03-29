@@ -176,7 +176,7 @@ bool parse(const std::string &filename, Data &data) {
                     tempData.setRiskAnalysis(std::stoi(attributes[1]));
                 }
                 else if (attributes[0] == "OutputFileName") {
-                    tempData.setOutputFileName(attributes[1]);
+                    tempData.setOutputFileName(attributes[1].substr(1, attributes[1].length()-2));
                 }
             }
         }
