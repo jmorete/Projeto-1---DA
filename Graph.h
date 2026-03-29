@@ -128,8 +128,8 @@ public:
 
     std::vector<Vertex<T> *> getVertexSet() const;
     
-    int getMaxFlow() const; //todo
-    void setMaxFlow(int maxFlow); //todo
+    int getMaxFlow() const;
+    void setMaxFlow(int maxFlow);
 
 protected:
     std::vector<Vertex<T> *> vertexSet;    // vertex set
@@ -145,7 +145,7 @@ protected:
     * Auxiliary function to set the "path" field to make a spanning tree.
     */
 
-    int maxFlow = 0;//todo
+    int maxFlow = 0;
 
 };
 
@@ -479,12 +479,12 @@ bool Graph<T>::addBidirectionalEdge(const T &sourc, const T &dest, double w) {
 template <class T>
 int Graph<T>::getMaxFlow() const {
     return maxFlow;
-} //todo
+}
 
 template <class T>
 void Graph<T>::setMaxFlow(int maxFlow) {
     this->maxFlow = maxFlow;
-} //todo
+}
 
 inline void deleteMatrix(int **m, int n) {
     if (m != nullptr) {
