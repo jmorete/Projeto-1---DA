@@ -20,6 +20,8 @@ class Output {
 private:
     std::vector<Assignment> assignments;
     std::vector<failedSubmission> failedSubmissions;
+    std::vector<int> criticalReviewers;
+    bool riskAnalysisDone = false;
 public:
     std::vector<Assignment> getAssignments();
     void setAssignments(const std::vector<Assignment> &assignments);
@@ -29,10 +31,19 @@ public:
 
     void sortAssignments(const std::string &sortBy);
 
+    void setCriticalReviewers(const std::vector<int>& reviewers);
+    const std::vector<int>& getCriticalReviewers() const;
+
+    void setRiskAnalysisDone(bool ra);
+    const bool getRiskAnalysisDone() const;
+
     void generateOutput(Graph<int> *g, Data &data);
 
-    void writeToFile(const std::string &filename);
+    void writeAToFile(const std::string &filename);
+    void writeRAToFile(const std::string &filename);
+
     void printOutput();
+    void printRiskAnalysis();
 };
 
 bool sortBySubmissionId(const Assignment &a, const Assignment &b);

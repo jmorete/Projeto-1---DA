@@ -24,12 +24,13 @@ public:
 
     bool hasFile() const;
     bool hasAssigned();
+    bool hasRiskAnalysis();
 
     static std::string getInput();
     static void waitForEnter();
 
     void runAssignments();
-
+    void runRiskAnalysis();
 
     void run();
     void mainMenu();

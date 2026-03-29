@@ -62,6 +62,15 @@ bool Menu::hasAssigned() {
 }
 
 
+bool Menu::hasRiskAnalysis() {
+    if (!output.getRiskAnalysisDone()) {
+        cout << "[ERROR] No risk analysis found. Please run the risk analysis first.\n\n";
+        return false;
+    }
+    return true;
+}
+
+
 std::string Menu::getInput() {
     string s;
     cout << ">>  ";
@@ -83,9 +92,44 @@ void Menu::runAssignments() {
     edmondsKarp(g, SOURCE_ID, SINK_ID);
     Output out;
     out.generateOutput(g,data);
+
     setOutput(out);
+    output.setCriticalReviewers({}); // reset risk analysis
+
+    delete g;
+
     cout << "[OK] Assignments successfully generated.\n\n";
     if (!output.getFailedSubmissions().empty()) cout << "[INFO] Not every submission could be assigned.\n\n";
+}
+
+
+void Menu::runRiskAnalysis() { //todo
+    std::vector<int> critical;
+    // get maxFlow of original set of reviewers
+    Graph<int> *og_g = buildGraph(data);
+    edmondsKarp(og_g, SOURCE_ID, SINK_ID);
+    int og_flow = og_g->getMaxFlow();
+    delete og_g;
+
+    for (Reviewer r : data.getReviewers()) {
+        Data risk_data = data;
+        risk_data.removeReviewer(r.id); // remove one reviewer at each iteration
+
+        // get maxFlow of altered set of reviewers
+        Graph<int> *risk_g = buildGraph(risk_data);
+        edmondsKarp(risk_g, SOURCE_ID, SINK_ID);
+        int risk_flow = risk_g->getMaxFlow();
+        delete risk_g;
+
+        if (risk_flow < og_flow) {
+            critical.push_back(r.id);
+        }
+    }
+    output.setCriticalReviewers(critical);
+    output.setRiskAnalysisDone(true);
+    std::cout << "[OK] Risk Analysis complete.\n\n";
+    if (!critical.empty()) cout << "[INFO] There is at least one critical reviewer.\n\n";
+
 }
 
 
@@ -117,11 +161,15 @@ void Menu::mainMenu() {
         if (!hasFile()) return;
         cout << "[INFO] Running using file configuration...\n\n";
         runAssignments();
-        if (data.getGenerateAssignments()) {
-            output.writeToFile(data.getOutputFileName());
-            cout << "[OK] Output successfully written to " << data.getOutputFileName() << ".\n\n";
+        if (data.getGenerateAssignments()) { //todo
+            output.writeAToFile(data.getOutputFileName());
+            cout << "[OK] Assignments successfully written to " << data.getOutputFileName() << ".\n\n";
         }
-        //risk analysis?
+        if (data.getRiskAnalysis() == 1) { 
+            runRiskAnalysis();
+            output.writeRAToFile(data.getOutputFileName());
+            cout << "[OK] Risk analysis successfully written to " << data.getOutputFileName() << ".\n\n";
+        }
     }
     else if (i == "4") setState(4);
     else if (i == "5") setState(5);
@@ -180,7 +228,8 @@ void Menu::manualMenu() {
     }
     else if (i == "2") {
         if (!hasFile()) return;
-        //risk analysis
+        cout << "[INFO] Running Risk Analysis...\n\n";
+        runRiskAnalysis(); //todo
     }
     else cout << "[ERROR] Invalid option." << "\n\n";
 }
@@ -194,8 +243,8 @@ void Menu::viewOutputMenu() {
         waitForEnter();
     }
     else if (i == "2") {
-        if (!hasAssigned()) return;
-        //print risk analysis
+        if (!hasRiskAnalysis()) return; //todo: hasRiskAnalysis ??? how to implement
+        output.printRiskAnalysis();
         waitForEnter();
     }
     else cout << "[ERROR] Invalid option." << "\n\n";
@@ -206,12 +255,13 @@ void Menu::exportMenu() {
     if (i == "0") setState(0);
     else if (i == "1") {
         if (!hasAssigned()) return;
-        output.writeToFile(data.getOutputFileName());
-        cout << "[OK] Output successfully written to " << data.getOutputFileName() << ".\n\n";
+        output.writeAToFile(data.getOutputFileName()); 
+        cout << "[OK] Assignments successfully written to " << data.getOutputFileName() << ".\n\n";
     }
     else if (i == "2") {
-        if (!hasAssigned()) return;
-        //export risk analysis
+        if (!hasRiskAnalysis()) return; //todo: hasRiskAnalysis ??? how to implement
+        output.writeRAToFile(data.getOutputFileName()); //todo
+        cout << "[OK] Risk Analysis successfully written to " << data.getOutputFileName() << ".\n\n";
     }
     else cout << "[ERROR] Invalid option." << "\n\n";
 }
@@ -220,7 +270,7 @@ void Menu::exportMenu() {
 void Menu::printHeader() const {
     cout << "\n=======================================\n";
     cout << " Scientific Conference Assignment Tool\n";
-    cout << "========================================\n";
+    cout << "=======================================\n";
     cout << "Current file: " << (file.empty() ? "[none]" : file) << "\n\n";
 }
 

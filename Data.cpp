@@ -16,6 +16,17 @@ void Data::addReviewer(const Reviewer &reviewer) {
     this->reviewers.push_back(reviewer);
 }
 
+//todo
+void Data::removeReviewer(const int &reviewerId) {
+    std::vector<Reviewer> newReviewers;
+    for (const Reviewer &r : reviewers) {
+        if (r.id != reviewerId) {
+            newReviewers.push_back(r);
+        }
+    }
+    reviewers = std::move(newReviewers);
+}
+
 vector<Submission> Data::getSubmissions() const {
     return submissions;
 }

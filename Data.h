@@ -41,6 +41,8 @@ public:
 
     void addReviewer(const Reviewer &reviewer);
 
+    void removeReviewer(const int &reviewer_id); //todo
+
     std::vector<Submission> getSubmissions() const;
 
     void setSubmissions(const std::vector<Submission> &submissions);

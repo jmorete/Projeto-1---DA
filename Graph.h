@@ -127,12 +127,14 @@ public:
     int getNumVertex() const;
 
     std::vector<Vertex<T> *> getVertexSet() const;
-
+    
+    int getMaxFlow() const; //todo
+    void setMaxFlow(int maxFlow); //todo
 
 protected:
     std::vector<Vertex<T> *> vertexSet;    // vertex set
 
-    double ** distMatrix = nullptr;   // dist matrix for Floyd-Warshall
+    double **distMatrix = nullptr;   // dist matrix for Floyd-Warshall
     int **pathMatrix = nullptr;   // path matrix for Floyd-Warshall
 
     /*
@@ -142,6 +144,8 @@ protected:
     /**
     * Auxiliary function to set the "path" field to make a spanning tree.
     */
+
+    int maxFlow = 0;//todo
 
 };
 
@@ -471,6 +475,16 @@ bool Graph<T>::addBidirectionalEdge(const T &sourc, const T &dest, double w) {
     e2->setReverse(e1);
     return true;
 }
+
+template <class T>
+int Graph<T>::getMaxFlow() const {
+    return maxFlow;
+} //todo
+
+template <class T>
+void Graph<T>::setMaxFlow(int maxFlow) {
+    this->maxFlow = maxFlow;
+} //todo
 
 inline void deleteMatrix(int **m, int n) {
     if (m != nullptr) {
