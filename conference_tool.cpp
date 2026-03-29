@@ -14,7 +14,7 @@ int main(int argc, char *argv[]){
         Menu menu;
         menu.run();
     }
-    if (argc == 4){
+    else if (argc == 4){
         Data data;
         if (!parse(argv[2], data)){
             return -1;
