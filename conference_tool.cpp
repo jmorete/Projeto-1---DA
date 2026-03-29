@@ -26,7 +26,7 @@ int main(int argc, char *argv[]){
         if (data.getGenerateAssignments()) {
             out.writeAToFile(argv[3]);
         }
-        if (data.getRiskAnalysis() == 1) { //todo
+        if (data.getRiskAnalysis() == 1) {
             std::vector<int> critical;
             int og_flow = g->getMaxFlow();
 

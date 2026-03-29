@@ -88,7 +88,7 @@ void edmondsKarp(Graph<T> *g, int source, int target) {
         }
     }
 
-    int maxFlow = 0; //todo
+    int maxFlow = 0;
     while (findAugmentingPath(g, s, t)) {
         double f = findMinResidualAlongPath(s, t);
         augmentFlowAlongPath(s, t, f);

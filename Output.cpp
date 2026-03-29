@@ -26,7 +26,7 @@ std::vector<failedSubmission> Output::getFailedSubmissions() {
 void Output::setFailedSubmissions(const std::vector<failedSubmission> &failsub) {
     this->failedSubmissions = failsub;
 }
-//todo
+
 const std::vector<int>& Output::getCriticalReviewers() const {
     return criticalReviewers;
 }
@@ -86,8 +86,6 @@ void Output::generateOutput(Graph<int> *g, Data &data) {
     }
 }
 
-// todo: it's not creating the output file if it doesn't exist
-// todo: it's not being able to open the .csv file to start writing... is it a problem in the location of the file?
 void Output::writeAToFile(const std::string &filename) { 
     std::ofstream out(filename);
     if (!out.is_open()) {
@@ -119,11 +117,11 @@ void Output::writeAToFile(const std::string &filename) {
     out.close(); // Close the output file
 }
 
-void Output::writeRAToFile(const std::string &filename) { //todo
+void Output::writeRAToFile(const std::string &filename) {
     std::ofstream out(filename);
 
     if (!criticalReviewers.empty()) {
-        out << "#Risk Analysis: 1" << std::endl; //todo
+        out << "#Risk Analysis: 1" << std::endl;
         std::sort(criticalReviewers.begin(), criticalReviewers.end());
         int i=0;
         for (const auto &r : criticalReviewers) {
@@ -166,7 +164,7 @@ void Output::printOutput() {
 void Output::printRiskAnalysis() {
     if (!criticalReviewers.empty()) {
         std::cout << "\n=== Risk Analysis ===\n\n";
-        std::cout << "#Risk Analysis: 1" << std::endl; //todo
+        std::cout << "#Risk Analysis: 1" << std::endl;
         std::sort(criticalReviewers.begin(), criticalReviewers.end());
         int i=0;
         for (const auto &r : criticalReviewers) {

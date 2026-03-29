@@ -103,7 +103,7 @@ void Menu::runAssignments() {
 }
 
 
-void Menu::runRiskAnalysis() { //todo
+void Menu::runRiskAnalysis() {
     std::vector<int> critical;
     // get maxFlow of original set of reviewers
     Graph<int> *og_g = buildGraph(data);
@@ -161,7 +161,7 @@ void Menu::mainMenu() {
         if (!hasFile()) return;
         cout << "[INFO] Running using file configuration...\n\n";
         runAssignments();
-        if (data.getGenerateAssignments()) { //todo
+        if (data.getGenerateAssignments()) {
             output.writeAToFile(data.getOutputFileName());
             cout << "[OK] Assignments successfully written to " << data.getOutputFileName() << ".\n\n";
         }
@@ -229,7 +229,7 @@ void Menu::manualMenu() {
     else if (i == "2") {
         if (!hasFile()) return;
         cout << "[INFO] Running Risk Analysis...\n\n";
-        runRiskAnalysis(); //todo
+        runRiskAnalysis();
     }
     else cout << "[ERROR] Invalid option." << "\n\n";
 }
@@ -243,7 +243,7 @@ void Menu::viewOutputMenu() {
         waitForEnter();
     }
     else if (i == "2") {
-        if (!hasRiskAnalysis()) return; //todo: hasRiskAnalysis ??? how to implement
+        if (!hasRiskAnalysis()) return;
         output.printRiskAnalysis();
         waitForEnter();
     }
@@ -259,8 +259,8 @@ void Menu::exportMenu() {
         cout << "[OK] Assignments successfully written to " << data.getOutputFileName() << ".\n\n";
     }
     else if (i == "2") {
-        if (!hasRiskAnalysis()) return; //todo: hasRiskAnalysis ??? how to implement
-        output.writeRAToFile(data.getOutputFileName()); //todo
+        if (!hasRiskAnalysis()) return;
+        output.writeRAToFile(data.getOutputFileName());
         cout << "[OK] Risk Analysis successfully written to " << data.getOutputFileName() << ".\n\n";
     }
     else cout << "[ERROR] Invalid option." << "\n\n";
