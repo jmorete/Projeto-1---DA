@@ -4,10 +4,10 @@
 #include "Data.h"
 #include "menu.h"
 
-#include <build_graph.h>
-#include <id.h>
-#include <max_flow.h>
-#include <output.h>
+#include "build_graph.h"
+#include "id.h"
+#include "max_flow.h"
+#include "output.h"
 
 #include <limits>
 

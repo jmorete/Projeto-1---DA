@@ -79,7 +79,7 @@ void validateData(const Data &data, std::vector<std::string> &errors){
 }
 
 bool parse(const std::string &filename, Data &data) {
-    Data tempData;
+    Data tempData; // if errors occur → doesn't corrupt existing data
     std::ifstream file(filename);
     std::vector<std::string> errors;
     if (!file.is_open()) {
