@@ -12,8 +12,8 @@ set(SOURCE_FILES
         Data.cpp
         max_flow.cpp
         build_graph.cpp
-        Menu.cpp
-        Output.cpp
+        menu.cpp
+        output.cpp
 )
 
 add_executable(myProg ${SOURCE_FILES})
