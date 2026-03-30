@@ -206,6 +206,11 @@ void Menu::viewDataMenu() {
         data.printParameters();
         waitForEnter();
     }
+    else if (i == "4") {
+        if (!hasFile()) return;
+        data.printControls();
+        waitForEnter();
+    }
     else cout << "[ERROR] Invalid option." << "\n\n";
 }
 
@@ -297,6 +302,7 @@ void Menu::display() const {
         cout << "1. List Submissions\n";
         cout << "2. List Reviewers\n";
         cout << "3. Show Parameters\n";
+        cout << "4. Show Controls\n";
         cout << "0. Go Back\n\n";
     }
     if (state == 4) {
