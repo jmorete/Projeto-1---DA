@@ -146,3 +146,10 @@ void Data::printParameters() const {
     cout << '\n';
 }
 
+void Data::printControls() const {
+    cout << "\n=== Controls ===\n\n";
+    cout << "Assignment Generation: " << getGenerateAssignments() << '\n';
+    cout << "Type of Risk Analysis: " << getRiskAnalysis() << '\n';
+    cout << '\n';
+}
+
