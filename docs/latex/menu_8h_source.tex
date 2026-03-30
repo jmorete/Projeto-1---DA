@@ -1,0 +1,55 @@
+\doxysection{menu.\+h}
+\hypertarget{menu_8h_source}{}\label{menu_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MENU\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MENU\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Graph.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}output.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_menu}{Menu}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ std::string\ file;\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ state\ =\ 0;\ }
+\DoxyCodeLine{00017\ \ \ \ \ \doxymbox{\hyperlink{class_data}{Data}}\ data\ =\ \{\};\ }
+\DoxyCodeLine{00018\ \ \ \ \ \doxymbox{\hyperlink{class_output}{Output}}\ output\ =\ \{\};\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ writtenAssignments\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ writtenRiskAnalysis\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_menu_a417a584b341928b2ec2874f650008cd7}{getState}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_menu_ad09c27f5f1c7bd0c8116353a91d334ef}{setState}}(\textcolor{keywordtype}{int}\ state);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ std::string\ \doxymbox{\hyperlink{class_menu_a811dc077b8b1022f338310d0fe091dc6}{getFile}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_menu_a109c7b32c00b27f5d423a7c90d252a5f}{setFile}}(\textcolor{keyword}{const}\ std::string\ \&file);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ \doxymbox{\hyperlink{class_data}{Data}}\ \doxymbox{\hyperlink{class_menu_a4d8bd695d5d39bb39a51e34b590b2a6b}{getData}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_menu_acda16a3e750dfc042344141762a2d71a}{setData}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_data}{Data}}\ \&data);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00062\ \ \ \ \ \doxymbox{\hyperlink{class_output}{Output}}\ \doxymbox{\hyperlink{class_menu_a8e9f90cbc3544b5bd2c9380ee253bf04}{getOutput}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_menu_a353a1ca4047627c5e5abda253c62dac2}{setOutput}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_output}{Output}}\ \&out);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_menu_a4afe7534927ffbb0f2e9982f5f31af24}{hasFile}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_menu_a472e7d24374a454c2b8537839373ae02}{hasAssigned}}();}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_menu_a7a97b0740ed0d0dfa1f0125d3e57757a}{hasRiskAnalysis}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \doxymbox{\hyperlink{class_menu_a6528381c6497c88154acec1ce6e14d90}{getInput}}();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_menu_a1443c99ceacc7ca955568f3fc69848d5}{waitForEnter}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_menu_a60a59a2d4fce880aec9db140800f4505}{runAssignments}}();}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_menu_a6c73847c804569a69e49827e6bf81c8c}{runRiskAnalysis}}();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_menu_a35656cd130e24d69383a5c9d0a73a38c}{run}}();}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_menu_aef9edee86d2ea460606361c92e061583}{mainMenu}}();}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_menu_a14167549b4b5dc84ad17a1751a623677}{loadFileMenu}}();}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_menu_ac7e5a947f2de348103d4fc01e637ab33}{viewDataMenu}}();}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_menu_af6498908d0693c0bc9a076317bb96212}{manualMenu}}();}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_menu_a13dafcd908f27e0211f7183f81330cfc}{viewOutputMenu}}();}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_menu_ab286a2093ceba60530c48703a5593bd6}{exportMenu}}();}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_menu_abc5eb356f1b442b1e27c2a2912a579c8}{display}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00195\ \};}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//MENU\_H}}
+
+\end{DoxyCode}

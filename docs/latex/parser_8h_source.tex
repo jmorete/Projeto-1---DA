@@ -1,0 +1,25 @@
+\doxysection{parser.\+h}
+\hypertarget{parser_8h_source}{}\label{parser_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PARSER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PARSER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Data.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00015\ std::string\ trim(\textcolor{keyword}{const}\ std::string\ \&str);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{void}\ addLineError(std::string\ error,\ \textcolor{keywordtype}{int}\ line,\ std::vector<std::string>\ \&errors);}
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{void}\ addInvalidParameterError(std::string\ parameter,\ std::vector<std::string>\ \&errors);}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ addMissingParameterError(std::string\ parameter,\ std::vector<std::string>\ \&errors);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ addDuplicateIdError(std::string\ idType,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ std::vector<std::string>\ \&errors);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ validateData(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_data}{Data}}\ \&data,\ std::vector<std::string>\ \&errors);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{bool}\ parse(\textcolor{keyword}{const}\ std::string\ \&filename,\ \doxymbox{\hyperlink{class_data}{Data}}\ \&data);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+
+\end{DoxyCode}

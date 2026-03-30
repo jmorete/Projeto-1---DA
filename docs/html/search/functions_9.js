@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['setassignments_0',['setAssignments',['../class_output.html#aa0ca69fdc4257893fbaa9de4d5258167',1,'Output']]],
+  ['setcriticalreviewers_1',['setCriticalReviewers',['../class_output.html#afb06308dabe85ac17567e099a3e2cb75',1,'Output']]],
+  ['setdata_2',['setData',['../class_menu.html#acda16a3e750dfc042344141762a2d71a',1,'Menu']]],
+  ['setfailedsubmissions_3',['setFailedSubmissions',['../class_output.html#a46b10f22f93219100cb031386b08f4c4',1,'Output']]],
+  ['setfile_4',['setFile',['../class_menu.html#a109c7b32c00b27f5d423a7c90d252a5f',1,'Menu']]],
+  ['setgenerateassignments_5',['setGenerateAssignments',['../class_data.html#ab99a2901e121bf91ba1e0fc4411749e6',1,'Data']]],
+  ['setmaxflow_6',['setMaxFlow',['../class_output.html#a6f548914f6c74e610405886533df54c8',1,'Output']]],
+  ['setmaxreviewsperreviewer_7',['setMaxReviewsPerReviewer',['../class_data.html#a32a2eea301557375da0c2815030eb22c',1,'Data']]],
+  ['setminreviewspersubmission_8',['setMinReviewsPerSubmission',['../class_data.html#a6a37b8ac06cb47cedd2ad2e49771567f',1,'Data']]],
+  ['setoutput_9',['setOutput',['../class_menu.html#a353a1ca4047627c5e5abda253c62dac2',1,'Menu']]],
+  ['setoutputfilename_10',['setOutputFileName',['../class_data.html#a6373096a7c81ebbbabac28af805212fe',1,'Data']]],
+  ['setreviewers_11',['setReviewers',['../class_data.html#ac82a8512ccefa4769ecef024ad867a94',1,'Data']]],
+  ['setriskanalysis_12',['setRiskAnalysis',['../class_data.html#a2b7994f5e0a95b9d0f76f7baca460faf',1,'Data']]],
+  ['setriskanalysisdone_13',['setRiskAnalysisDone',['../class_output.html#ac2948c7939fcc821f6f87a26d20f953c',1,'Output']]],
+  ['setstate_14',['setState',['../class_menu.html#ad09c27f5f1c7bd0c8116353a91d334ef',1,'Menu']]],
+  ['setsubmissions_15',['setSubmissions',['../class_data.html#af01659678cc4fcd37b612e9048cc39ee',1,'Data']]],
+  ['sortassignments_16',['sortAssignments',['../class_output.html#a74d4750b90597597821cf7169c7285b5',1,'Output']]]
+];

@@ -1,0 +1,98 @@
+\doxysection{Data.\+h}
+\hypertarget{_data_8h_source}{}\label{_data_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DATA\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DATA\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_submission}{Submission}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_submission_a7b6e2405d79134e923f1d74beba845a0}{id}};\ }
+\DoxyCodeLine{00014\ \ \ \ \ std::string\ \doxymbox{\hyperlink{struct_submission_ae143f4081965aaa80af89fc3a1b5baa6}{title}};\ }
+\DoxyCodeLine{00015\ \ \ \ \ std::string\ \doxymbox{\hyperlink{struct_submission_a4aa82369da56d3661fc89d099c78bfee}{author}};\ }
+\DoxyCodeLine{00016\ \ \ \ \ std::string\ \doxymbox{\hyperlink{struct_submission_ab524f4484bf346c7ba0d94b0a7dd114c}{email}};\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_submission_aa3acc5309038ce8cee78a4edc6faab2e}{primaryTopic}};\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_submission_a31e3e68d8338cb9de1a11ed822f62c9a}{secondaryTopic}}\ =\ -\/1;}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_reviewer}{Reviewer}}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_reviewer_aeacccab23a0ec1c59ab0283f95f01fda}{id}};\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ \doxymbox{\hyperlink{struct_reviewer_af9ab4025cd39328e9ce594ef165e9e9c}{name}};\ }
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ \doxymbox{\hyperlink{struct_reviewer_a5ae05709e98e328427aed3ead8912fd8}{email}};\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_reviewer_a1a6ba130656856000843bbc57e811486}{primaryExpertise}};\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_reviewer_a19fc5d836237badc57737b4b8bbdcd10}{secondaryExpertise}}\ =\ -\/1;}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_data}{Data}}\ \{}
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ \ \ std::vector<Reviewer>\ reviewers;\ }
+\DoxyCodeLine{00054\ \ \ \ \ std::vector<Submission>\ submissions;\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ minReviewsPerSubmission;\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ minReviewsPerSubmissionSet\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ maxReviewsPerReviewer;\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ maxReviewsPerReviewerSet\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ generateAssignments;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{bool}\ generateAssignmentsSet\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{int}\ riskAnalysis;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ riskAnalysisSet\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00091\ \ \ \ \ std::string\ outputFileName\ =\ \textcolor{stringliteral}{"{}output.csv"{}};\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00097\ \ \ \ \ std::vector<Reviewer>\ \doxymbox{\hyperlink{class_data_ae4be42a4cb216848d6ac8b7c60a23ace}{getReviewers}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_data_ac82a8512ccefa4769ecef024ad867a94}{setReviewers}}(\textcolor{keyword}{const}\ std::vector<Reviewer>\ \&reviewers);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_data_ad1f4082595dbcbb0831bb33cb3b5628f}{addReviewer}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_reviewer}{Reviewer}}\ \&reviewer);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_data_aaa6870e21709ae031eb6c79b84795317}{removeReviewer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&reviewer\_id);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00121\ \ \ \ \ std::vector<Submission>\ \doxymbox{\hyperlink{class_data_a0ae982ffd3878a71d3b86018d896bcad}{getSubmissions}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_data_af01659678cc4fcd37b612e9048cc39ee}{setSubmissions}}(\textcolor{keyword}{const}\ std::vector<Submission>\ \&submissions);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_data_a1b8509b6013a73052dc06409fea5b2ad}{addSubmission}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_submission}{Submission}}\ \&submission);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_data_aa38e8b3be847d54b9073dde88bedb72b}{getMinReviewsPerSubmission}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_data_a6a37b8ac06cb47cedd2ad2e49771567f}{setMinReviewsPerSubmission}}(\textcolor{keywordtype}{int}\ minReviewsPerSubmission);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_data_a75bc26716bcb5b2831a49020d0eee1e1}{minReviewsPerSubmissionIsSet}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_data_aba7a98122f18d588d7add0fde1e896a2}{getMaxReviewsPerReviewer}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_data_a32a2eea301557375da0c2815030eb22c}{setMaxReviewsPerReviewer}}(\textcolor{keywordtype}{int}\ maxReviewsPerReviewer);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_data_a6674359aa2af343e4161f531f052f2af}{maxReviewsPerReviewerIsSet}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_data_afe13038fac72111b827065655bf18f3a}{getGenerateAssignments}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_data_ab99a2901e121bf91ba1e0fc4411749e6}{setGenerateAssignments}}(\textcolor{keywordtype}{int}\ generateAssignments);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_data_a42f876ee6f5a6650023f4e638a35f715}{generateAssignmentsIsSet}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_data_ada2e23a3fa66ca66bd812d8c7a132f0d}{getRiskAnalysis}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_data_a2b7994f5e0a95b9d0f76f7baca460faf}{setRiskAnalysis}}(\textcolor{keywordtype}{int}\ riskAnalysis);}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_data_a494af4f30bccc465749b7331ed042773}{riskAnalysisIsSet}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \doxymbox{\hyperlink{class_data_a5e6433116c636af9d6450cf84ab6255d}{getOutputFileName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_data_a6373096a7c81ebbbabac28af805212fe}{setOutputFileName}}(\textcolor{keyword}{const}\ std::string\ \&outputFileName);}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_data_af2686206a3d8a2333fad0b79c1634908}{getPrimaryDomain}}(\textcolor{keywordtype}{int}\ submissionId);}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_data_aa43b38423141e3c12028597743c67011}{getSecondaryDomain}}(\textcolor{keywordtype}{int}\ submissionId);}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_data_aba83db61d039eb9d4bcdf19a2301822b}{printSubmissions}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_data_a1b9dc4a7ddcc26ea14483628eccce551}{printReviewers}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_data_a3f3cab523b0ae8ee5cc8888766b26e07}{printParameters}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_data_ab4efe023a2a7b24168719242c9b90cde}{printControls}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00248\ \};}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

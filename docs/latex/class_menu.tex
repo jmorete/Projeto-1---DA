@@ -1,0 +1,362 @@
+\doxysection{Menu Class Reference}
+\hypertarget{class_menu}{}\label{class_menu}\index{Menu@{Menu}}
+
+
+Provides a console-\/based user interface for interacting with the program.  
+
+
+
+
+{\ttfamily \+\#include $<$menu.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{class_menu_a417a584b341928b2ec2874f650008cd7}{get\+State}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the state identifier used to identify sub-\/menus. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_menu_ad09c27f5f1c7bd0c8116353a91d334ef}{set\+State}} (int state)
+\begin{DoxyCompactList}\small\item\em Updates the state identifier used to identify sub-\/menus. \end{DoxyCompactList}\item 
+std::\+string \doxymbox{\hyperlink{class_menu_a811dc077b8b1022f338310d0fe091dc6}{get\+File}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the input file that the data that is in use was parsed from. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_menu_a109c7b32c00b27f5d423a7c90d252a5f}{set\+File}} (const std::\+string \&file)
+\begin{DoxyCompactList}\small\item\em Updates the name of the input file that the data that is in use was parsed from. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_data}{Data}} \doxymbox{\hyperlink{class_menu_a4d8bd695d5d39bb39a51e34b590b2a6b}{get\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the data that is currently loaded. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_menu_acda16a3e750dfc042344141762a2d71a}{set\+Data}} (const \doxymbox{\hyperlink{class_data}{Data}} \&data)
+\begin{DoxyCompactList}\small\item\em Updates the data that is currently loaded. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_output}{Output}} \doxymbox{\hyperlink{class_menu_a8e9f90cbc3544b5bd2c9380ee253bf04}{get\+Output}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current output related data. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_menu_a353a1ca4047627c5e5abda253c62dac2}{set\+Output}} (const \doxymbox{\hyperlink{class_output}{Output}} \&out)
+\begin{DoxyCompactList}\small\item\em Updates the current output related data. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_menu_a4afe7534927ffbb0f2e9982f5f31af24}{has\+File}} () const
+\begin{DoxyCompactList}\small\item\em Checks if a file is loaded and prints an error message if it isn\textquotesingle{}t. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_menu_a472e7d24374a454c2b8537839373ae02}{has\+Assigned}} ()
+\begin{DoxyCompactList}\small\item\em Checks if assignments have been generated and prints an error message if they haven\textquotesingle{}t. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_menu_a7a97b0740ed0d0dfa1f0125d3e57757a}{has\+Risk\+Analysis}} () const
+\begin{DoxyCompactList}\small\item\em Checks if risk analysis has been run and prints an error message if it hasn\textquotesingle{}t. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_menu_a60a59a2d4fce880aec9db140800f4505}{run\+Assignments}} ()
+\begin{DoxyCompactList}\small\item\em Executes the full assignment generation pipeline. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_menu_a6c73847c804569a69e49827e6bf81c8c}{run\+Risk\+Analysis}} ()
+\begin{DoxyCompactList}\small\item\em Performs risk analysis of the flow network with respect to reviewers. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_menu_a35656cd130e24d69383a5c9d0a73a38c}{run}} ()
+\begin{DoxyCompactList}\small\item\em Runs the main interactive menu loop. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_menu_aef9edee86d2ea460606361c92e061583}{main\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Handles the main menu interface. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_menu_a14167549b4b5dc84ad17a1751a623677}{load\+File\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Provides options for loading input data files. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_menu_ac7e5a947f2de348103d4fc01e637ab33}{view\+Data\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Displays and allows inspection of loaded input data. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_menu_af6498908d0693c0bc9a076317bb96212}{manual\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Allows the user to run operations manually. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_menu_a13dafcd908f27e0211f7183f81330cfc}{view\+Output\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Displays and allows inspection of generated output data. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_menu_ab286a2093ceba60530c48703a5593bd6}{export\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Handles exporting results to an external file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_menu_abc5eb356f1b442b1e27c2a2912a579c8}{display}} () const
+\begin{DoxyCompactList}\small\item\em Displays the user interface for the current menu state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std::\+string \doxymbox{\hyperlink{class_menu_a6528381c6497c88154acec1ce6e14d90}{get\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Shows the user they can input text, waits until they do to and retrieves it. \end{DoxyCompactList}\item 
+\Hypertarget{class_menu_a1443c99ceacc7ca955568f3fc69848d5}\label{class_menu_a1443c99ceacc7ca955568f3fc69848d5} 
+static void {\bfseries wait\+For\+Enter} ()
+\begin{DoxyCompactList}\small\item\em Tells the user they can press Enter to continue and waits until they do. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides a console-\/based user interface for interacting with the program. 
+
+Handles user input and displays menu options, allowing the user to load data, configure parameters, trigger assignment generation, and view results. Acts as the main interaction layer between the user and the underlying logic. 
+
+\label{doc-func-members}
+\Hypertarget{class_menu_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_menu_abc5eb356f1b442b1e27c2a2912a579c8}\index{Menu@{Menu}!display@{display}}
+\index{display@{display}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily \label{class_menu_abc5eb356f1b442b1e27c2a2912a579c8} 
+void Menu::\+display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Displays the user interface for the current menu state. 
+
+Acts as the presentation layer of the console interface, printing the available options associated with the active state to standard output. \Hypertarget{class_menu_ab286a2093ceba60530c48703a5593bd6}\index{Menu@{Menu}!exportMenu@{exportMenu}}
+\index{exportMenu@{exportMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{exportMenu()}{exportMenu()}}
+{\footnotesize\ttfamily \label{class_menu_ab286a2093ceba60530c48703a5593bd6} 
+void Menu::\+export\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handles exporting results to an external file. 
+
+Allows the user to save computed assignments and analysis results to an output file. It also reports errors or successful operations to the console. \Hypertarget{class_menu_a4d8bd695d5d39bb39a51e34b590b2a6b}\index{Menu@{Menu}!getData@{getData}}
+\index{getData@{getData}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \label{class_menu_a4d8bd695d5d39bb39a51e34b590b2a6b} 
+\doxymbox{\hyperlink{class_data}{Data}} Menu::\+get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the data that is currently loaded. 
+
+\begin{DoxyReturn}{Returns}
+Currently loaded data 
+\end{DoxyReturn}
+\Hypertarget{class_menu_a811dc077b8b1022f338310d0fe091dc6}\index{Menu@{Menu}!getFile@{getFile}}
+\index{getFile@{getFile}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{getFile()}{getFile()}}
+{\footnotesize\ttfamily \label{class_menu_a811dc077b8b1022f338310d0fe091dc6} 
+std::\+string Menu::\+get\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the name of the input file that the data that is in use was parsed from. 
+
+\begin{DoxyReturn}{Returns}
+Name of the file 
+\end{DoxyReturn}
+\Hypertarget{class_menu_a6528381c6497c88154acec1ce6e14d90}\index{Menu@{Menu}!getInput@{getInput}}
+\index{getInput@{getInput}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{getInput()}{getInput()}}
+{\footnotesize\ttfamily \label{class_menu_a6528381c6497c88154acec1ce6e14d90} 
+std::\+string Menu::\+get\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Shows the user they can input text, waits until they do to and retrieves it. 
+
+\begin{DoxyReturn}{Returns}
+Inputted string 
+\end{DoxyReturn}
+\Hypertarget{class_menu_a8e9f90cbc3544b5bd2c9380ee253bf04}\index{Menu@{Menu}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}}
+{\footnotesize\ttfamily \label{class_menu_a8e9f90cbc3544b5bd2c9380ee253bf04} 
+\doxymbox{\hyperlink{class_output}{Output}} Menu::\+get\+Output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the current output related data. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_output}{Output} data 
+\end{DoxyReturn}
+\Hypertarget{class_menu_a417a584b341928b2ec2874f650008cd7}\index{Menu@{Menu}!getState@{getState}}
+\index{getState@{getState}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily \label{class_menu_a417a584b341928b2ec2874f650008cd7} 
+int Menu::\+get\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the state identifier used to identify sub-\/menus. 
+
+\begin{DoxyReturn}{Returns}
+State identifier 
+\end{DoxyReturn}
+\Hypertarget{class_menu_a472e7d24374a454c2b8537839373ae02}\index{Menu@{Menu}!hasAssigned@{hasAssigned}}
+\index{hasAssigned@{hasAssigned}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{hasAssigned()}{hasAssigned()}}
+{\footnotesize\ttfamily \label{class_menu_a472e7d24374a454c2b8537839373ae02} 
+bool Menu::\+has\+Assigned (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks if assignments have been generated and prints an error message if they haven\textquotesingle{}t. 
+
+\begin{DoxyReturn}{Returns}
+True if assignments have been generated, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_menu_a4afe7534927ffbb0f2e9982f5f31af24}\index{Menu@{Menu}!hasFile@{hasFile}}
+\index{hasFile@{hasFile}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{hasFile()}{hasFile()}}
+{\footnotesize\ttfamily \label{class_menu_a4afe7534927ffbb0f2e9982f5f31af24} 
+bool Menu::\+has\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if a file is loaded and prints an error message if it isn\textquotesingle{}t. 
+
+\begin{DoxyReturn}{Returns}
+True if a file is loaded, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_menu_a7a97b0740ed0d0dfa1f0125d3e57757a}\index{Menu@{Menu}!hasRiskAnalysis@{hasRiskAnalysis}}
+\index{hasRiskAnalysis@{hasRiskAnalysis}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{hasRiskAnalysis()}{hasRiskAnalysis()}}
+{\footnotesize\ttfamily \label{class_menu_a7a97b0740ed0d0dfa1f0125d3e57757a} 
+bool Menu::\+has\+Risk\+Analysis (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if risk analysis has been run and prints an error message if it hasn\textquotesingle{}t. 
+
+\begin{DoxyReturn}{Returns}
+True if risk analysis has been run, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_menu_a14167549b4b5dc84ad17a1751a623677}\index{Menu@{Menu}!loadFileMenu@{loadFileMenu}}
+\index{loadFileMenu@{loadFileMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{loadFileMenu()}{loadFileMenu()}}
+{\footnotesize\ttfamily \label{class_menu_a14167549b4b5dc84ad17a1751a623677} 
+void Menu::\+load\+File\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Provides options for loading input data files. 
+
+Allows the user to load and parse external data files containing submissions, reviewers, and configuration parameters.
+
+Updates the internal data model upon successful loading and reports errors or successful operations to the console. \Hypertarget{class_menu_aef9edee86d2ea460606361c92e061583}\index{Menu@{Menu}!mainMenu@{mainMenu}}
+\index{mainMenu@{mainMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{mainMenu()}{mainMenu()}}
+{\footnotesize\ttfamily \label{class_menu_aef9edee86d2ea460606361c92e061583} 
+void Menu::\+main\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Handles the main menu interface. 
+
+Allows navigation to all major system functionalities such as loading input data, viewing stored information, generating assignments, performing analysis, and exporting results. It also allows the user to run the full file\textquotesingle{}s pipeline automatically.
+
+Updates the menu state based on user selection and reports errors or successful operations to the console. \Hypertarget{class_menu_af6498908d0693c0bc9a076317bb96212}\index{Menu@{Menu}!manualMenu@{manualMenu}}
+\index{manualMenu@{manualMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{manualMenu()}{manualMenu()}}
+{\footnotesize\ttfamily \label{class_menu_af6498908d0693c0bc9a076317bb96212} 
+void Menu::\+manual\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Allows the user to run operations manually. 
+
+Provides the option to run assignment generation and risk analysis manually even if the configuration says it isn\textquotesingle{}t going to.
+
+Updates the output data and reports errors or successful operations to the console. \Hypertarget{class_menu_a35656cd130e24d69383a5c9d0a73a38c}\index{Menu@{Menu}!run@{run}}
+\index{run@{run}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{class_menu_a35656cd130e24d69383a5c9d0a73a38c} 
+void Menu::\+run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Runs the main interactive menu loop. 
+
+Continuously displays the menu and dispatches execution to the appropriate submenu based on the current application state. The loop terminates when the state is set to -\/1. \Hypertarget{class_menu_a60a59a2d4fce880aec9db140800f4505}\index{Menu@{Menu}!runAssignments@{runAssignments}}
+\index{runAssignments@{runAssignments}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{runAssignments()}{runAssignments()}}
+{\footnotesize\ttfamily \label{class_menu_a60a59a2d4fce880aec9db140800f4505} 
+void Menu::\+run\+Assignments (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Executes the full assignment generation pipeline. 
+
+Builds the flow network from the input data, computes the maximum flow using the Edmonds-\/\+Karp algorithm, generates the final assignment output, and stores the resulting output data.
+
+Also prints a status message indicating success and reports if some submissions could not be assigned.
+
+Complexity:\+ O(\+V \texorpdfstring{$\ast$}{*} E\texorpdfstring{$^\wedge$}{\string^}2), where V is the number of vertices and E is the number of edges \Hypertarget{class_menu_a6c73847c804569a69e49827e6bf81c8c}\index{Menu@{Menu}!runRiskAnalysis@{runRiskAnalysis}}
+\index{runRiskAnalysis@{runRiskAnalysis}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{runRiskAnalysis()}{runRiskAnalysis()}}
+{\footnotesize\ttfamily \label{class_menu_a6c73847c804569a69e49827e6bf81c8c} 
+void Menu::\+run\+Risk\+Analysis (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Performs risk analysis of the flow network with respect to reviewers. 
+
+Computes the baseline maximum flow, then iteratively removes each reviewer and recomputes the flow to determine its impact on system capacity.
+
+Reviewers whose removal decreases the maximum flow are classified as critical, as they act as bottlenecks in the assignment network.
+
+Results are stored in the output data. Also prints a status message indicating success and reports if there are any critical reviewers.
+
+Complexity:\+ O(\+R \texorpdfstring{$\ast$}{*} V \texorpdfstring{$\ast$}{*} E\texorpdfstring{$^\wedge$}{\string^}2), where R is the number of reviewers, V is the number of vertices and E is the number of edges \Hypertarget{class_menu_acda16a3e750dfc042344141762a2d71a}\index{Menu@{Menu}!setData@{setData}}
+\index{setData@{setData}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily \label{class_menu_acda16a3e750dfc042344141762a2d71a} 
+void Menu::\+set\+Data (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_data}{Data}} \&}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Updates the data that is currently loaded. 
+
+Changes the currently loaded data to a new one and resets the output to avoid storing outdated data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Updated data \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_menu_a109c7b32c00b27f5d423a7c90d252a5f}\index{Menu@{Menu}!setFile@{setFile}}
+\index{setFile@{setFile}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{setFile()}{setFile()}}
+{\footnotesize\ttfamily \label{class_menu_a109c7b32c00b27f5d423a7c90d252a5f} 
+void Menu::\+set\+File (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{file}{}\end{DoxyParamCaption})}
+
+
+
+Updates the name of the input file that the data that is in use was parsed from. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Updated file name \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_menu_a353a1ca4047627c5e5abda253c62dac2}\index{Menu@{Menu}!setOutput@{setOutput}}
+\index{setOutput@{setOutput}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{setOutput()}{setOutput()}}
+{\footnotesize\ttfamily \label{class_menu_a353a1ca4047627c5e5abda253c62dac2} 
+void Menu::\+set\+Output (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_output}{Output}} \&}]{out}{}\end{DoxyParamCaption})}
+
+
+
+Updates the current output related data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Updated output data \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_menu_ad09c27f5f1c7bd0c8116353a91d334ef}\index{Menu@{Menu}!setState@{setState}}
+\index{setState@{setState}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily \label{class_menu_ad09c27f5f1c7bd0c8116353a91d334ef} 
+void Menu::\+set\+State (\begin{DoxyParamCaption}\item[{int}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Updates the state identifier used to identify sub-\/menus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Updated state identifier \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_menu_ac7e5a947f2de348103d4fc01e637ab33}\index{Menu@{Menu}!viewDataMenu@{viewDataMenu}}
+\index{viewDataMenu@{viewDataMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{viewDataMenu()}{viewDataMenu()}}
+{\footnotesize\ttfamily \label{class_menu_ac7e5a947f2de348103d4fc01e637ab33} 
+void Menu::\+view\+Data\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays and allows inspection of loaded input data. 
+
+Provides options to view reviewers, submissions, parameters and configuration controls currently stored in the system while also reporting errors or successful operations to the console. \Hypertarget{class_menu_a13dafcd908f27e0211f7183f81330cfc}\index{Menu@{Menu}!viewOutputMenu@{viewOutputMenu}}
+\index{viewOutputMenu@{viewOutputMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{viewOutputMenu()}{viewOutputMenu()}}
+{\footnotesize\ttfamily \label{class_menu_a13dafcd908f27e0211f7183f81330cfc} 
+void Menu::\+view\+Output\+Menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays and allows inspection of generated output data. 
+
+Provides options to view the assignments and risk analysis currently stored in the system while also reporting errors or successful operations to the console. 
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+menu.\+h\item 
+Menu.\+cpp\end{DoxyCompactItemize}

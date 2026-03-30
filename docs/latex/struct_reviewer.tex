@@ -1,0 +1,73 @@
+\doxysection{Reviewer Struct Reference}
+\hypertarget{struct_reviewer}{}\label{struct_reviewer}\index{Reviewer@{Reviewer}}
+
+
+Represents a reviewer.  
+
+
+
+
+{\ttfamily \+\#include $<$Data.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{struct_reviewer_aeacccab23a0ec1c59ab0283f95f01fda}{id}}
+\item 
+std::\+string \doxymbox{\hyperlink{struct_reviewer_af9ab4025cd39328e9ce594ef165e9e9c}{name}}
+\item 
+std::\+string \doxymbox{\hyperlink{struct_reviewer_a5ae05709e98e328427aed3ead8912fd8}{email}}
+\item 
+int \doxymbox{\hyperlink{struct_reviewer_a1a6ba130656856000843bbc57e811486}{primary\+Expertise}}
+\item 
+int \doxymbox{\hyperlink{struct_reviewer_a19fc5d836237badc57737b4b8bbdcd10}{secondary\+Expertise}} = -\/1
+\begin{DoxyCompactList}\small\item\em Secondary expertise topic identifier (optional). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a reviewer. 
+
+Stores data about them and their expertises, which will be used for assigning submissions with matching topics. 
+
+\label{doc-variable-members}
+\Hypertarget{struct_reviewer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_reviewer_a5ae05709e98e328427aed3ead8912fd8}\index{Reviewer@{Reviewer}!email@{email}}
+\index{email@{email}!Reviewer@{Reviewer}}
+\doxysubsubsection{\texorpdfstring{email}{email}}
+{\footnotesize\ttfamily \label{struct_reviewer_a5ae05709e98e328427aed3ead8912fd8} 
+std::\+string Reviewer::\+email}
+
+Email contact of the reviewer \Hypertarget{struct_reviewer_aeacccab23a0ec1c59ab0283f95f01fda}\index{Reviewer@{Reviewer}!id@{id}}
+\index{id@{id}!Reviewer@{Reviewer}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{struct_reviewer_aeacccab23a0ec1c59ab0283f95f01fda} 
+int Reviewer::\+id}
+
+Unique identifier for the reviewer \Hypertarget{struct_reviewer_af9ab4025cd39328e9ce594ef165e9e9c}\index{Reviewer@{Reviewer}!name@{name}}
+\index{name@{name}!Reviewer@{Reviewer}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{struct_reviewer_af9ab4025cd39328e9ce594ef165e9e9c} 
+std::\+string Reviewer::\+name}
+
+Name of the reviewer \Hypertarget{struct_reviewer_a1a6ba130656856000843bbc57e811486}\index{Reviewer@{Reviewer}!primaryExpertise@{primaryExpertise}}
+\index{primaryExpertise@{primaryExpertise}!Reviewer@{Reviewer}}
+\doxysubsubsection{\texorpdfstring{primaryExpertise}{primaryExpertise}}
+{\footnotesize\ttfamily \label{struct_reviewer_a1a6ba130656856000843bbc57e811486} 
+int Reviewer::\+primary\+Expertise}
+
+Primary expertise topic identifier \Hypertarget{struct_reviewer_a19fc5d836237badc57737b4b8bbdcd10}\index{Reviewer@{Reviewer}!secondaryExpertise@{secondaryExpertise}}
+\index{secondaryExpertise@{secondaryExpertise}!Reviewer@{Reviewer}}
+\doxysubsubsection{\texorpdfstring{secondaryExpertise}{secondaryExpertise}}
+{\footnotesize\ttfamily \label{struct_reviewer_a19fc5d836237badc57737b4b8bbdcd10} 
+int Reviewer::\+secondary\+Expertise = -\/1}
+
+
+
+Secondary expertise topic identifier (optional). 
+
+Value is -\/1 when no expertise is assigned. 
+
+The documentation for this struct was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Data.\+h\end{DoxyCompactItemize}

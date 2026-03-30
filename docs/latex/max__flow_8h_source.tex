@@ -1,0 +1,24 @@
+\doxysection{max\+\_\+flow.\+h}
+\hypertarget{max__flow_8h_source}{}\label{max__flow_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}Graph.h"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#ifndef\ MAX\_FLOW\_H}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ MAX\_FLOW\_H}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ testAndVisit(std::queue<\ \doxymbox{\hyperlink{class_vertex}{Vertex<T>}}*>\ \&q,\ \doxymbox{\hyperlink{class_edge}{Edge<T>}}\ *e,\ \doxymbox{\hyperlink{class_vertex}{Vertex<T>}}\ *w,\ \textcolor{keywordtype}{double}\ residual);}
+\DoxyCodeLine{00033\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{bool}\ findAugmentingPath(\doxymbox{\hyperlink{class_graph}{Graph<T>}}\ *g,\ \doxymbox{\hyperlink{class_vertex}{Vertex<T>}}\ *s,\ \doxymbox{\hyperlink{class_vertex}{Vertex<T>}}\ *t);}
+\DoxyCodeLine{00046\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{double}\ findMinResidualAlongPath(\doxymbox{\hyperlink{class_vertex}{Vertex<T>}}\ *s,\ \doxymbox{\hyperlink{class_vertex}{Vertex<T>}}\ *t);}
+\DoxyCodeLine{00059\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ augmentFlowAlongPath(\doxymbox{\hyperlink{class_vertex}{Vertex<T>}}\ *s,\ \doxymbox{\hyperlink{class_vertex}{Vertex<T>}}\ *t,\ \textcolor{keywordtype}{double}\ f);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{int}\ edmondsKarp(\doxymbox{\hyperlink{class_graph}{Graph<T>}}\ *g,\ \textcolor{keywordtype}{int}\ source,\ \textcolor{keywordtype}{int}\ sink);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00081\ }
+
+\end{DoxyCode}

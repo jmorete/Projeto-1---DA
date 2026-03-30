@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['secondaryexpertise_0',['secondaryExpertise',['../struct_reviewer.html#a19fc5d836237badc57737b4b8bbdcd10',1,'Reviewer']]],
+  ['secondarytopic_1',['secondaryTopic',['../struct_submission.html#a31e3e68d8338cb9de1a11ed822f62c9a',1,'Submission']]],
+  ['setassignments_2',['setAssignments',['../class_output.html#aa0ca69fdc4257893fbaa9de4d5258167',1,'Output']]],
+  ['setcriticalreviewers_3',['setCriticalReviewers',['../class_output.html#afb06308dabe85ac17567e099a3e2cb75',1,'Output']]],
+  ['setdata_4',['setData',['../class_menu.html#acda16a3e750dfc042344141762a2d71a',1,'Menu']]],
+  ['setfailedsubmissions_5',['setFailedSubmissions',['../class_output.html#a46b10f22f93219100cb031386b08f4c4',1,'Output']]],
+  ['setfile_6',['setFile',['../class_menu.html#a109c7b32c00b27f5d423a7c90d252a5f',1,'Menu']]],
+  ['setgenerateassignments_7',['setGenerateAssignments',['../class_data.html#ab99a2901e121bf91ba1e0fc4411749e6',1,'Data']]],
+  ['setmaxflow_8',['setMaxFlow',['../class_output.html#a6f548914f6c74e610405886533df54c8',1,'Output']]],
+  ['setmaxreviewsperreviewer_9',['setMaxReviewsPerReviewer',['../class_data.html#a32a2eea301557375da0c2815030eb22c',1,'Data']]],
+  ['setminreviewspersubmission_10',['setMinReviewsPerSubmission',['../class_data.html#a6a37b8ac06cb47cedd2ad2e49771567f',1,'Data']]],
+  ['setoutput_11',['setOutput',['../class_menu.html#a353a1ca4047627c5e5abda253c62dac2',1,'Menu']]],
+  ['setoutputfilename_12',['setOutputFileName',['../class_data.html#a6373096a7c81ebbbabac28af805212fe',1,'Data']]],
+  ['setreviewers_13',['setReviewers',['../class_data.html#ac82a8512ccefa4769ecef024ad867a94',1,'Data']]],
+  ['setriskanalysis_14',['setRiskAnalysis',['../class_data.html#a2b7994f5e0a95b9d0f76f7baca460faf',1,'Data']]],
+  ['setriskanalysisdone_15',['setRiskAnalysisDone',['../class_output.html#ac2948c7939fcc821f6f87a26d20f953c',1,'Output']]],
+  ['setstate_16',['setState',['../class_menu.html#ad09c27f5f1c7bd0c8116353a91d334ef',1,'Menu']]],
+  ['setsubmissions_17',['setSubmissions',['../class_data.html#af01659678cc4fcd37b612e9048cc39ee',1,'Data']]],
+  ['sortassignments_18',['sortAssignments',['../class_output.html#a74d4750b90597597821cf7169c7285b5',1,'Output']]],
+  ['submission_19',['Submission',['../struct_submission.html',1,'']]],
+  ['submissionid_20',['submissionId',['../struct_assignment.html#a19c094cacc0df98064feef4ccd3553ee',1,'Assignment::submissionId'],['../structfailed_submission.html#a7169cd78779a1d94b099b9ddeb3c0373',1,'failedSubmission::submissionId']]]
+];

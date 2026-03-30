@@ -1,0 +1,417 @@
+\doxysection{Data Class Reference}
+\hypertarget{class_data}{}\label{class_data}\index{Data@{Data}}
+
+
+Represents the data parsed from an input file.  
+
+
+
+
+{\ttfamily \+\#include $<$Data.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std::\+vector$<$ \doxymbox{\hyperlink{struct_reviewer}{Reviewer}} $>$ \doxymbox{\hyperlink{class_data_ae4be42a4cb216848d6ac8b7c60a23ace}{get\+Reviewers}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the list of reviewers. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_data_ac82a8512ccefa4769ecef024ad867a94}{set\+Reviewers}} (const std::\+vector$<$ \doxymbox{\hyperlink{struct_reviewer}{Reviewer}} $>$ \&reviewers)
+\begin{DoxyCompactList}\small\item\em Updates the list of reviewers. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_data_ad1f4082595dbcbb0831bb33cb3b5628f}{add\+Reviewer}} (const \doxymbox{\hyperlink{struct_reviewer}{Reviewer}} \&reviewer)
+\begin{DoxyCompactList}\small\item\em Adds a reviewer to the list of reviewers. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_data_aaa6870e21709ae031eb6c79b84795317}{remove\+Reviewer}} (const int \&reviewer\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Removes a reviewer from the list of reviewers. \end{DoxyCompactList}\item 
+std::\+vector$<$ \doxymbox{\hyperlink{struct_submission}{Submission}} $>$ \doxymbox{\hyperlink{class_data_a0ae982ffd3878a71d3b86018d896bcad}{get\+Submissions}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the list of submissions. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_data_af01659678cc4fcd37b612e9048cc39ee}{set\+Submissions}} (const std::\+vector$<$ \doxymbox{\hyperlink{struct_submission}{Submission}} $>$ \&submissions)
+\begin{DoxyCompactList}\small\item\em Updates the list of submissions. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_data_a1b8509b6013a73052dc06409fea5b2ad}{add\+Submission}} (const \doxymbox{\hyperlink{struct_submission}{Submission}} \&submission)
+\begin{DoxyCompactList}\small\item\em Adds a submission to the list of submissions. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_data_aa38e8b3be847d54b9073dde88bedb72b}{get\+Min\+Reviews\+Per\+Submission}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the minimum number of reviews required per submission. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_data_a6a37b8ac06cb47cedd2ad2e49771567f}{set\+Min\+Reviews\+Per\+Submission}} (int min\+Reviews\+Per\+Submission)
+\begin{DoxyCompactList}\small\item\em Updates the minimum number of reviews required per submission. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_data_a75bc26716bcb5b2831a49020d0eee1e1}{min\+Reviews\+Per\+Submission\+Is\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the minimum number of reviews required per submission is set. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_data_aba7a98122f18d588d7add0fde1e896a2}{get\+Max\+Reviews\+Per\+Reviewer}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the maximum number of reviews a reviewer can review. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_data_a32a2eea301557375da0c2815030eb22c}{set\+Max\+Reviews\+Per\+Reviewer}} (int max\+Reviews\+Per\+Reviewer)
+\begin{DoxyCompactList}\small\item\em Updates the maximum number of reviews a reviewer can review. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_data_a6674359aa2af343e4161f531f052f2af}{max\+Reviews\+Per\+Reviewer\+Is\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the maximum number of reviews a reviewer can review is set. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_data_afe13038fac72111b827065655bf18f3a}{get\+Generate\+Assignments}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the control number for the assignment generation. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_data_ab99a2901e121bf91ba1e0fc4411749e6}{set\+Generate\+Assignments}} (int generate\+Assignments)
+\begin{DoxyCompactList}\small\item\em Updates the control number for the assignment generation. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_data_a42f876ee6f5a6650023f4e638a35f715}{generate\+Assignments\+Is\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the control number for the assignment generation is set. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_data_ada2e23a3fa66ca66bd812d8c7a132f0d}{get\+Risk\+Analysis}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the type of risk analysis to be carried out. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_data_a2b7994f5e0a95b9d0f76f7baca460faf}{set\+Risk\+Analysis}} (int risk\+Analysis)
+\begin{DoxyCompactList}\small\item\em Updates the type of risk analysis to be carried out. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_data_a494af4f30bccc465749b7331ed042773}{risk\+Analysis\+Is\+Set}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the type of risk analysis to be carried out is set. \end{DoxyCompactList}\item 
+const std::\+string \doxymbox{\hyperlink{class_data_a5e6433116c636af9d6450cf84ab6255d}{get\+Output\+File\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the output file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_data_a6373096a7c81ebbbabac28af805212fe}{set\+Output\+File\+Name}} (const std::\+string \&output\+File\+Name)
+\begin{DoxyCompactList}\small\item\em Updates the name of the output file. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_data_af2686206a3d8a2333fad0b79c1634908}{get\+Primary\+Domain}} (int submission\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves the primary domain identifier of a submission. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_data_aa43b38423141e3c12028597743c67011}{get\+Secondary\+Domain}} (int submission\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves the secondary domain identifier of a submission. \end{DoxyCompactList}\item 
+\Hypertarget{class_data_aba83db61d039eb9d4bcdf19a2301822b}\label{class_data_aba83db61d039eb9d4bcdf19a2301822b} 
+void {\bfseries print\+Submissions} () const
+\begin{DoxyCompactList}\small\item\em Formats and displays the details of every submission in the console. \end{DoxyCompactList}\item 
+\Hypertarget{class_data_a1b9dc4a7ddcc26ea14483628eccce551}\label{class_data_a1b9dc4a7ddcc26ea14483628eccce551} 
+void {\bfseries print\+Reviewers} () const
+\begin{DoxyCompactList}\small\item\em Formats and displays the details of every reviewer in the console. \end{DoxyCompactList}\item 
+\Hypertarget{class_data_a3f3cab523b0ae8ee5cc8888766b26e07}\label{class_data_a3f3cab523b0ae8ee5cc8888766b26e07} 
+void {\bfseries print\+Parameters} () const
+\begin{DoxyCompactList}\small\item\em Displays the assignment generation parameters in the console. \end{DoxyCompactList}\item 
+\Hypertarget{class_data_ab4efe023a2a7b24168719242c9b90cde}\label{class_data_ab4efe023a2a7b24168719242c9b90cde} 
+void {\bfseries print\+Controls} () const
+\begin{DoxyCompactList}\small\item\em Displays the file\textquotesingle{}s configuration for generating assignments ans running risk analysis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the data parsed from an input file. 
+
+Stores all the information about the submissions, reviewers and all the parameters for the assignments. 
+
+\label{doc-func-members}
+\Hypertarget{class_data_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_data_ad1f4082595dbcbb0831bb33cb3b5628f}\index{Data@{Data}!addReviewer@{addReviewer}}
+\index{addReviewer@{addReviewer}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{addReviewer()}{addReviewer()}}
+{\footnotesize\ttfamily \label{class_data_ad1f4082595dbcbb0831bb33cb3b5628f} 
+void Data::\+add\+Reviewer (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{struct_reviewer}{Reviewer}} \&}]{reviewer}{}\end{DoxyParamCaption})}
+
+
+
+Adds a reviewer to the list of reviewers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reviewer} & \doxylink{struct_reviewer}{Reviewer} to add to the list \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_data_a1b8509b6013a73052dc06409fea5b2ad}\index{Data@{Data}!addSubmission@{addSubmission}}
+\index{addSubmission@{addSubmission}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{addSubmission()}{addSubmission()}}
+{\footnotesize\ttfamily \label{class_data_a1b8509b6013a73052dc06409fea5b2ad} 
+void Data::\+add\+Submission (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{struct_submission}{Submission}} \&}]{submission}{}\end{DoxyParamCaption})}
+
+
+
+Adds a submission to the list of submissions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em submission} & \doxylink{struct_submission}{Submission} to add to the list \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_data_a42f876ee6f5a6650023f4e638a35f715}\index{Data@{Data}!generateAssignmentsIsSet@{generateAssignmentsIsSet}}
+\index{generateAssignmentsIsSet@{generateAssignmentsIsSet}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{generateAssignmentsIsSet()}{generateAssignmentsIsSet()}}
+{\footnotesize\ttfamily \label{class_data_a42f876ee6f5a6650023f4e638a35f715} 
+bool Data::\+generate\+Assignments\+Is\+Set (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the control number for the assignment generation is set. 
+
+\begin{DoxyReturn}{Returns}
+True if the control number is defined, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_data_afe13038fac72111b827065655bf18f3a}\index{Data@{Data}!getGenerateAssignments@{getGenerateAssignments}}
+\index{getGenerateAssignments@{getGenerateAssignments}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getGenerateAssignments()}{getGenerateAssignments()}}
+{\footnotesize\ttfamily \label{class_data_afe13038fac72111b827065655bf18f3a} 
+int Data::\+get\+Generate\+Assignments (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the control number for the assignment generation. 
+
+\begin{DoxyReturn}{Returns}
+Control number 
+\end{DoxyReturn}
+\Hypertarget{class_data_aba7a98122f18d588d7add0fde1e896a2}\index{Data@{Data}!getMaxReviewsPerReviewer@{getMaxReviewsPerReviewer}}
+\index{getMaxReviewsPerReviewer@{getMaxReviewsPerReviewer}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getMaxReviewsPerReviewer()}{getMaxReviewsPerReviewer()}}
+{\footnotesize\ttfamily \label{class_data_aba7a98122f18d588d7add0fde1e896a2} 
+int Data::\+get\+Max\+Reviews\+Per\+Reviewer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the maximum number of reviews a reviewer can review. 
+
+\begin{DoxyReturn}{Returns}
+Maximum review capacity 
+\end{DoxyReturn}
+\Hypertarget{class_data_aa38e8b3be847d54b9073dde88bedb72b}\index{Data@{Data}!getMinReviewsPerSubmission@{getMinReviewsPerSubmission}}
+\index{getMinReviewsPerSubmission@{getMinReviewsPerSubmission}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getMinReviewsPerSubmission()}{getMinReviewsPerSubmission()}}
+{\footnotesize\ttfamily \label{class_data_aa38e8b3be847d54b9073dde88bedb72b} 
+int Data::\+get\+Min\+Reviews\+Per\+Submission (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the minimum number of reviews required per submission. 
+
+\begin{DoxyReturn}{Returns}
+Minimum review count 
+\end{DoxyReturn}
+\Hypertarget{class_data_a5e6433116c636af9d6450cf84ab6255d}\index{Data@{Data}!getOutputFileName@{getOutputFileName}}
+\index{getOutputFileName@{getOutputFileName}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getOutputFileName()}{getOutputFileName()}}
+{\footnotesize\ttfamily \label{class_data_a5e6433116c636af9d6450cf84ab6255d} 
+const string Data::\+get\+Output\+File\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the name of the output file. 
+
+\begin{DoxyReturn}{Returns}
+Name of the file 
+\end{DoxyReturn}
+\Hypertarget{class_data_af2686206a3d8a2333fad0b79c1634908}\index{Data@{Data}!getPrimaryDomain@{getPrimaryDomain}}
+\index{getPrimaryDomain@{getPrimaryDomain}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getPrimaryDomain()}{getPrimaryDomain()}}
+{\footnotesize\ttfamily \label{class_data_af2686206a3d8a2333fad0b79c1634908} 
+int Data::\+get\+Primary\+Domain (\begin{DoxyParamCaption}\item[{int}]{submission\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the primary domain identifier of a submission. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em submission\+Id} & Identifier of the submission to get the domain from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Primary domain identifier of the submission or -\/1 if the submission isn\textquotesingle{}t found 
+\end{DoxyReturn}
+\Hypertarget{class_data_ae4be42a4cb216848d6ac8b7c60a23ace}\index{Data@{Data}!getReviewers@{getReviewers}}
+\index{getReviewers@{getReviewers}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getReviewers()}{getReviewers()}}
+{\footnotesize\ttfamily \label{class_data_ae4be42a4cb216848d6ac8b7c60a23ace} 
+vector$<$ \doxymbox{\hyperlink{struct_reviewer}{Reviewer}} $>$ Data::\+get\+Reviewers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the list of reviewers. 
+
+\begin{DoxyReturn}{Returns}
+Copy of the vector containing all the reviewers in the data. 
+\end{DoxyReturn}
+\Hypertarget{class_data_ada2e23a3fa66ca66bd812d8c7a132f0d}\index{Data@{Data}!getRiskAnalysis@{getRiskAnalysis}}
+\index{getRiskAnalysis@{getRiskAnalysis}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getRiskAnalysis()}{getRiskAnalysis()}}
+{\footnotesize\ttfamily \label{class_data_ada2e23a3fa66ca66bd812d8c7a132f0d} 
+int Data::\+get\+Risk\+Analysis (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the type of risk analysis to be carried out. 
+
+\begin{DoxyReturn}{Returns}
+Type of risk analysis 
+\end{DoxyReturn}
+\Hypertarget{class_data_aa43b38423141e3c12028597743c67011}\index{Data@{Data}!getSecondaryDomain@{getSecondaryDomain}}
+\index{getSecondaryDomain@{getSecondaryDomain}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getSecondaryDomain()}{getSecondaryDomain()}}
+{\footnotesize\ttfamily \label{class_data_aa43b38423141e3c12028597743c67011} 
+int Data::\+get\+Secondary\+Domain (\begin{DoxyParamCaption}\item[{int}]{submission\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the secondary domain identifier of a submission. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em submission\+Id} & Identifier of the submission to get the domain from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Secondary domain identifier of the submission or -\/1 if the submission isn\textquotesingle{}t found 
+\end{DoxyReturn}
+\Hypertarget{class_data_a0ae982ffd3878a71d3b86018d896bcad}\index{Data@{Data}!getSubmissions@{getSubmissions}}
+\index{getSubmissions@{getSubmissions}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{getSubmissions()}{getSubmissions()}}
+{\footnotesize\ttfamily \label{class_data_a0ae982ffd3878a71d3b86018d896bcad} 
+vector$<$ \doxymbox{\hyperlink{struct_submission}{Submission}} $>$ Data::\+get\+Submissions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the list of submissions. 
+
+\begin{DoxyReturn}{Returns}
+Copy of the vector containing all the submissions in the data. 
+\end{DoxyReturn}
+\Hypertarget{class_data_a6674359aa2af343e4161f531f052f2af}\index{Data@{Data}!maxReviewsPerReviewerIsSet@{maxReviewsPerReviewerIsSet}}
+\index{maxReviewsPerReviewerIsSet@{maxReviewsPerReviewerIsSet}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{maxReviewsPerReviewerIsSet()}{maxReviewsPerReviewerIsSet()}}
+{\footnotesize\ttfamily \label{class_data_a6674359aa2af343e4161f531f052f2af} 
+bool Data::\+max\+Reviews\+Per\+Reviewer\+Is\+Set (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the maximum number of reviews a reviewer can review is set. 
+
+\begin{DoxyReturn}{Returns}
+True if the capacity is defined, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_data_a75bc26716bcb5b2831a49020d0eee1e1}\index{Data@{Data}!minReviewsPerSubmissionIsSet@{minReviewsPerSubmissionIsSet}}
+\index{minReviewsPerSubmissionIsSet@{minReviewsPerSubmissionIsSet}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{minReviewsPerSubmissionIsSet()}{minReviewsPerSubmissionIsSet()}}
+{\footnotesize\ttfamily \label{class_data_a75bc26716bcb5b2831a49020d0eee1e1} 
+bool Data::\+min\+Reviews\+Per\+Submission\+Is\+Set (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the minimum number of reviews required per submission is set. 
+
+\begin{DoxyReturn}{Returns}
+True if the value is defined, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_data_aaa6870e21709ae031eb6c79b84795317}\index{Data@{Data}!removeReviewer@{removeReviewer}}
+\index{removeReviewer@{removeReviewer}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{removeReviewer()}{removeReviewer()}}
+{\footnotesize\ttfamily \label{class_data_aaa6870e21709ae031eb6c79b84795317} 
+void Data::\+remove\+Reviewer (\begin{DoxyParamCaption}\item[{const int \&}]{reviewer\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Removes a reviewer from the list of reviewers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reviewer\+\_\+id} & Identifier for the reviewer to remove \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_data_a494af4f30bccc465749b7331ed042773}\index{Data@{Data}!riskAnalysisIsSet@{riskAnalysisIsSet}}
+\index{riskAnalysisIsSet@{riskAnalysisIsSet}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{riskAnalysisIsSet()}{riskAnalysisIsSet()}}
+{\footnotesize\ttfamily \label{class_data_a494af4f30bccc465749b7331ed042773} 
+bool Data::\+risk\+Analysis\+Is\+Set (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the type of risk analysis to be carried out is set. 
+
+\begin{DoxyReturn}{Returns}
+True if the type of risk analysis is defined, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_data_ab99a2901e121bf91ba1e0fc4411749e6}\index{Data@{Data}!setGenerateAssignments@{setGenerateAssignments}}
+\index{setGenerateAssignments@{setGenerateAssignments}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setGenerateAssignments()}{setGenerateAssignments()}}
+{\footnotesize\ttfamily \label{class_data_ab99a2901e121bf91ba1e0fc4411749e6} 
+void Data::\+set\+Generate\+Assignments (\begin{DoxyParamCaption}\item[{int}]{generate\+Assignments}{}\end{DoxyParamCaption})}
+
+
+
+Updates the control number for the assignment generation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em generate\+Assignments} & Updated number \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_data_a32a2eea301557375da0c2815030eb22c}\index{Data@{Data}!setMaxReviewsPerReviewer@{setMaxReviewsPerReviewer}}
+\index{setMaxReviewsPerReviewer@{setMaxReviewsPerReviewer}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setMaxReviewsPerReviewer()}{setMaxReviewsPerReviewer()}}
+{\footnotesize\ttfamily \label{class_data_a32a2eea301557375da0c2815030eb22c} 
+void Data::\+set\+Max\+Reviews\+Per\+Reviewer (\begin{DoxyParamCaption}\item[{int}]{max\+Reviews\+Per\+Reviewer}{}\end{DoxyParamCaption})}
+
+
+
+Updates the maximum number of reviews a reviewer can review. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Reviews\+Per\+Reviewer} & Updated number \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_data_a6a37b8ac06cb47cedd2ad2e49771567f}\index{Data@{Data}!setMinReviewsPerSubmission@{setMinReviewsPerSubmission}}
+\index{setMinReviewsPerSubmission@{setMinReviewsPerSubmission}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setMinReviewsPerSubmission()}{setMinReviewsPerSubmission()}}
+{\footnotesize\ttfamily \label{class_data_a6a37b8ac06cb47cedd2ad2e49771567f} 
+void Data::\+set\+Min\+Reviews\+Per\+Submission (\begin{DoxyParamCaption}\item[{int}]{min\+Reviews\+Per\+Submission}{}\end{DoxyParamCaption})}
+
+
+
+Updates the minimum number of reviews required per submission. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Reviews\+Per\+Submission} & Updated number \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_data_a6373096a7c81ebbbabac28af805212fe}\index{Data@{Data}!setOutputFileName@{setOutputFileName}}
+\index{setOutputFileName@{setOutputFileName}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setOutputFileName()}{setOutputFileName()}}
+{\footnotesize\ttfamily \label{class_data_a6373096a7c81ebbbabac28af805212fe} 
+void Data::\+set\+Output\+File\+Name (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{output\+File\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Updates the name of the output file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+File\+Name} & Updated name \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_data_ac82a8512ccefa4769ecef024ad867a94}\index{Data@{Data}!setReviewers@{setReviewers}}
+\index{setReviewers@{setReviewers}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setReviewers()}{setReviewers()}}
+{\footnotesize\ttfamily \label{class_data_ac82a8512ccefa4769ecef024ad867a94} 
+void Data::\+set\+Reviewers (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \doxymbox{\hyperlink{struct_reviewer}{Reviewer}} $>$ \&}]{reviewers}{}\end{DoxyParamCaption})}
+
+
+
+Updates the list of reviewers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reviewers} & Updated list of reviewers \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_data_a2b7994f5e0a95b9d0f76f7baca460faf}\index{Data@{Data}!setRiskAnalysis@{setRiskAnalysis}}
+\index{setRiskAnalysis@{setRiskAnalysis}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setRiskAnalysis()}{setRiskAnalysis()}}
+{\footnotesize\ttfamily \label{class_data_a2b7994f5e0a95b9d0f76f7baca460faf} 
+void Data::\+set\+Risk\+Analysis (\begin{DoxyParamCaption}\item[{int}]{risk\+Analysis}{}\end{DoxyParamCaption})}
+
+
+
+Updates the type of risk analysis to be carried out. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em risk\+Analysis} & Updated type \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_data_af01659678cc4fcd37b612e9048cc39ee}\index{Data@{Data}!setSubmissions@{setSubmissions}}
+\index{setSubmissions@{setSubmissions}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{setSubmissions()}{setSubmissions()}}
+{\footnotesize\ttfamily \label{class_data_af01659678cc4fcd37b612e9048cc39ee} 
+void Data::\+set\+Submissions (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \doxymbox{\hyperlink{struct_submission}{Submission}} $>$ \&}]{submissions}{}\end{DoxyParamCaption})}
+
+
+
+Updates the list of submissions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em submissions} & Updated list of submissions \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Data.\+h\item 
+Data.\+cpp\end{DoxyCompactItemize}

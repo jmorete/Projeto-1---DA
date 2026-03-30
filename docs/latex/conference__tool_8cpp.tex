@@ -1,0 +1,52 @@
+\doxysection{conference\+\_\+tool.\+cpp File Reference}
+\hypertarget{conference__tool_8cpp}{}\label{conference__tool_8cpp}\index{conference\_tool.cpp@{conference\_tool.cpp}}
+
+
+Entry point of the application.  
+
+
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include "{}Graph.\+h"{}}\newline
+{\ttfamily \+\#include "{}Data.\+h"{}}\newline
+{\ttfamily \+\#include "{}parser.\+h"{}}\newline
+{\ttfamily \+\#include "{}max\+\_\+flow.\+h"{}}\newline
+{\ttfamily \+\#include "{}build\+\_\+graph.\+h"{}}\newline
+{\ttfamily \+\#include "{}output.\+h"{}}\newline
+{\ttfamily \+\#include "{}id.\+h"{}}\newline
+{\ttfamily \+\#include "{}menu.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{conference__tool_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\+[$\,$]\+)
+\begin{DoxyCompactList}\small\item\em Program entry point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{conference__tool_8cpp_afef54eeb45eb85504a54d5260d2686ac}\label{conference__tool_8cpp_afef54eeb45eb85504a54d5260d2686ac} 
+bool {\bfseries is\+Batch\+Mode} = false
+\begin{DoxyCompactList}\small\item\em Indicates whether the program is running in batch mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entry point of the application. 
+
+Initializes the program and either just opens the menu or runs the full pipeline as specified in the input file. 
+
+\label{doc-func-members}
+\Hypertarget{conference__tool_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{conference__tool_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{conference\_tool.cpp@{conference\_tool.cpp}!main@{main}}
+\index{main@{main}!conference\_tool.cpp@{conference\_tool.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{conference__tool_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\+[$\,$]\+}\end{DoxyParamCaption})}
+
+
+
+Program entry point. 
+
+Initializes the application and checks the number of arguments to select the mode. If it has no arguments, it launches the main menu loop. If it is in batch mode, it loads input data, generates and analyzes reviewer–submission assignments using a maximum flow approach and writes the results to an external file.
+
+\begin{DoxyReturn}{Returns}
+Exit status code 
+\end{DoxyReturn}

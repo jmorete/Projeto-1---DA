@@ -1,6 +1,5 @@
 #include "max_flow.h"
 
-// Function to test the given vertex 'w' and visit it if conditions are met
 template <class T>
 void testAndVisit(std::queue< Vertex<T>*> &q, Edge<T> *e, Vertex<T> *w, double residual) {
     // Check if the vertex 'w' is not visited and there is residual capacity
@@ -12,7 +11,6 @@ void testAndVisit(std::queue< Vertex<T>*> &q, Edge<T> *e, Vertex<T> *w, double r
     }
 }
 
-// Function to find an augmenting path using Breadth-First Search
 template <class T>
 bool findAugmentingPath(Graph<T> *g, Vertex<T> *s, Vertex<T> *t) {
     // Mark all vertices as not visited
@@ -37,7 +35,6 @@ bool findAugmentingPath(Graph<T> *g, Vertex<T> *s, Vertex<T> *t) {
     return t->isVisited();
 }
 
-// Function to find the minimum residual capacity along the augmenting path
 template <class T>
 double findMinResidualAlongPath(Vertex<T> *s, Vertex<T> *t) {
     double f = INF;
@@ -54,7 +51,6 @@ double findMinResidualAlongPath(Vertex<T> *s, Vertex<T> *t) {
     return f;
 }
 
-// Function to augment flow along the augmenting path with the given flow value
 template <class T>
 void augmentFlowAlongPath(Vertex<T> *s, Vertex<T> *t, double f) {
     // Traverse the augmenting path and update the flow values accordingly
@@ -70,7 +66,6 @@ void augmentFlowAlongPath(Vertex<T> *s, Vertex<T> *t, double f) {
 
 }
 
-// Main function implementing the Edmonds-Karp algorithm
 template <class T>
 int edmondsKarp(Graph<T> *g, int source, int target) {
     // Find source and target vertices in the graph

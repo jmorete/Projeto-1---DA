@@ -1,0 +1,261 @@
+\doxysection{Output Class Reference}
+\hypertarget{class_output}{}\label{class_output}\index{Output@{Output}}
+
+
+Represents the data formatted to be outputted.  
+
+
+
+
+{\ttfamily \+\#include $<$output.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std::\+vector$<$ \doxymbox{\hyperlink{struct_assignment}{Assignment}} $>$ \doxymbox{\hyperlink{class_output_a541b39f3db478e9253ad5145f8173c14}{get\+Assignments}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the list of assignments. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_output_aa0ca69fdc4257893fbaa9de4d5258167}{set\+Assignments}} (const std::\+vector$<$ \doxymbox{\hyperlink{struct_assignment}{Assignment}} $>$ \&assignments)
+\begin{DoxyCompactList}\small\item\em Updates the list of assignments. \end{DoxyCompactList}\item 
+std::\+vector$<$ \doxymbox{\hyperlink{structfailed_submission}{failed\+Submission}} $>$ \doxymbox{\hyperlink{class_output_a9104de9159e1abb254455f733eaf4956}{get\+Failed\+Submissions}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the list of failed submissions. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_output_a46b10f22f93219100cb031386b08f4c4}{set\+Failed\+Submissions}} (const std::\+vector$<$ \doxymbox{\hyperlink{structfailed_submission}{failed\+Submission}} $>$ \&failsub)
+\begin{DoxyCompactList}\small\item\em Updates the list of failed submissions. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_output_a74d4750b90597597821cf7169c7285b5}{sort\+Assignments}} (const std::\+string \&sort\+By)
+\begin{DoxyCompactList}\small\item\em Sorts the list of assignments by an attribute. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_output_afb06308dabe85ac17567e099a3e2cb75}{set\+Critical\+Reviewers}} (const std::\+vector$<$ int $>$ \&reviewers)
+\begin{DoxyCompactList}\small\item\em Updates the list of critical reviewers. \end{DoxyCompactList}\item 
+const std::\+vector$<$ int $>$ \& \doxymbox{\hyperlink{class_output_aa14089e877d1fbe192d89a3a471a86f1}{get\+Critical\+Reviewers}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the list of critical reviewers. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_output_ac2948c7939fcc821f6f87a26d20f953c}{set\+Risk\+Analysis\+Done}} (bool ra)
+\begin{DoxyCompactList}\small\item\em Updates the flag about whether risk analysis has been done or not. \end{DoxyCompactList}\item 
+const bool \doxymbox{\hyperlink{class_output_a91e4a9d8f896e5c4d10ca91b3a44135c}{get\+Risk\+Analysis\+Done}} () const
+\begin{DoxyCompactList}\small\item\em Checks whether risk analysis has been done or not. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_output_a6f548914f6c74e610405886533df54c8}{set\+Max\+Flow}} (int max\+Flow)
+\begin{DoxyCompactList}\small\item\em Updates the maximum flow of the flow network. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_output_a17551d525b3d8dbe5af731c5ac6f9c84}{get\+Max\+Flow}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the maximum flow of the flow network. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_output_a73803f7baebd6e1cab79d8cf171a7e0c}{generate\+Output}} (\doxymbox{\hyperlink{class_graph}{Graph}}$<$ int $>$ \texorpdfstring{$\ast$}{*}g, \doxymbox{\hyperlink{class_data}{Data}} \&data)
+\begin{DoxyCompactList}\small\item\em Generates assignment and failure reports from the computed flow graph. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_output_aaf783d632d89db480d4c1db3992d8cfd}{write\+ATo\+File}} (const std::\+string \&filename)
+\begin{DoxyCompactList}\small\item\em Formats and writes assignment related data to an external file. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_output_ae0136f4bd12a5292dad9a5bd8c358fad}{write\+RATo\+File}} (const std::\+string \&filename)
+\begin{DoxyCompactList}\small\item\em Formats and writes risk analysis related data to an external file. \end{DoxyCompactList}\item 
+\Hypertarget{class_output_a69c0f05a04c455f0c4375afb1006b6f9}\label{class_output_a69c0f05a04c455f0c4375afb1006b6f9} 
+void {\bfseries print\+Output} ()
+\begin{DoxyCompactList}\small\item\em Formats and displays assignment related data in the console. \end{DoxyCompactList}\item 
+\Hypertarget{class_output_a654d20e314f17fe8052492325e0c00a6}\label{class_output_a654d20e314f17fe8052492325e0c00a6} 
+void {\bfseries print\+Risk\+Analysis} ()
+\begin{DoxyCompactList}\small\item\em Formats and displays risk analysis related data in the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the data formatted to be outputted. 
+
+Stores all the information about the generated assignments and risk analysis. 
+
+\label{doc-func-members}
+\Hypertarget{class_output_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_output_a73803f7baebd6e1cab79d8cf171a7e0c}\index{Output@{Output}!generateOutput@{generateOutput}}
+\index{generateOutput@{generateOutput}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{generateOutput()}{generateOutput()}}
+{\footnotesize\ttfamily \label{class_output_a73803f7baebd6e1cab79d8cf171a7e0c} 
+void Output::\+generate\+Output (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_graph}{Graph}}$<$ int $>$ \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{\doxymbox{\hyperlink{class_data}{Data}} \&}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Generates assignment and failure reports from the computed flow graph. 
+
+Traverses the flow network after execution of the max-\/flow algorithm and extracts meaningful results, including successful assignments and submissions that did not receive the required number of reviews.
+
+Results are stored internally. \Hypertarget{class_output_a541b39f3db478e9253ad5145f8173c14}\index{Output@{Output}!getAssignments@{getAssignments}}
+\index{getAssignments@{getAssignments}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{getAssignments()}{getAssignments()}}
+{\footnotesize\ttfamily \label{class_output_a541b39f3db478e9253ad5145f8173c14} 
+std::\+vector$<$ \doxymbox{\hyperlink{struct_assignment}{Assignment}} $>$ Output::\+get\+Assignments (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the list of assignments. 
+
+\begin{DoxyReturn}{Returns}
+Copy of the vector containing all the assignments generated. 
+\end{DoxyReturn}
+\Hypertarget{class_output_aa14089e877d1fbe192d89a3a471a86f1}\index{Output@{Output}!getCriticalReviewers@{getCriticalReviewers}}
+\index{getCriticalReviewers@{getCriticalReviewers}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{getCriticalReviewers()}{getCriticalReviewers()}}
+{\footnotesize\ttfamily \label{class_output_aa14089e877d1fbe192d89a3a471a86f1} 
+const std::\+vector$<$ int $>$ \& Output::\+get\+Critical\+Reviewers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the list of critical reviewers. 
+
+\begin{DoxyReturn}{Returns}
+Copy of the vector containing all the critical reviewers found. 
+\end{DoxyReturn}
+\Hypertarget{class_output_a9104de9159e1abb254455f733eaf4956}\index{Output@{Output}!getFailedSubmissions@{getFailedSubmissions}}
+\index{getFailedSubmissions@{getFailedSubmissions}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{getFailedSubmissions()}{getFailedSubmissions()}}
+{\footnotesize\ttfamily \label{class_output_a9104de9159e1abb254455f733eaf4956} 
+std::\+vector$<$ \doxymbox{\hyperlink{structfailed_submission}{failed\+Submission}} $>$ Output::\+get\+Failed\+Submissions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the list of failed submissions. 
+
+\begin{DoxyReturn}{Returns}
+Copy of the vector containing all the failed submissions found. 
+\end{DoxyReturn}
+\Hypertarget{class_output_a17551d525b3d8dbe5af731c5ac6f9c84}\index{Output@{Output}!getMaxFlow@{getMaxFlow}}
+\index{getMaxFlow@{getMaxFlow}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{getMaxFlow()}{getMaxFlow()}}
+{\footnotesize\ttfamily \label{class_output_a17551d525b3d8dbe5af731c5ac6f9c84} 
+int Output::\+get\+Max\+Flow (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the maximum flow of the flow network. 
+
+\begin{DoxyReturn}{Returns}
+Maximum flow 
+\end{DoxyReturn}
+\Hypertarget{class_output_a91e4a9d8f896e5c4d10ca91b3a44135c}\index{Output@{Output}!getRiskAnalysisDone@{getRiskAnalysisDone}}
+\index{getRiskAnalysisDone@{getRiskAnalysisDone}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{getRiskAnalysisDone()}{getRiskAnalysisDone()}}
+{\footnotesize\ttfamily \label{class_output_a91e4a9d8f896e5c4d10ca91b3a44135c} 
+const bool Output::\+get\+Risk\+Analysis\+Done (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks whether risk analysis has been done or not. 
+
+\begin{DoxyReturn}{Returns}
+True if risk analysis has been done 
+\end{DoxyReturn}
+\Hypertarget{class_output_aa0ca69fdc4257893fbaa9de4d5258167}\index{Output@{Output}!setAssignments@{setAssignments}}
+\index{setAssignments@{setAssignments}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{setAssignments()}{setAssignments()}}
+{\footnotesize\ttfamily \label{class_output_aa0ca69fdc4257893fbaa9de4d5258167} 
+void Output::\+set\+Assignments (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \doxymbox{\hyperlink{struct_assignment}{Assignment}} $>$ \&}]{assignments}{}\end{DoxyParamCaption})}
+
+
+
+Updates the list of assignments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em assignments} & Updated list of assignments \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_output_afb06308dabe85ac17567e099a3e2cb75}\index{Output@{Output}!setCriticalReviewers@{setCriticalReviewers}}
+\index{setCriticalReviewers@{setCriticalReviewers}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{setCriticalReviewers()}{setCriticalReviewers()}}
+{\footnotesize\ttfamily \label{class_output_afb06308dabe85ac17567e099a3e2cb75} 
+void Output::\+set\+Critical\+Reviewers (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ int $>$ \&}]{reviewers}{}\end{DoxyParamCaption})}
+
+
+
+Updates the list of critical reviewers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reviewers} & Updated list of critical reviewers \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_output_a46b10f22f93219100cb031386b08f4c4}\index{Output@{Output}!setFailedSubmissions@{setFailedSubmissions}}
+\index{setFailedSubmissions@{setFailedSubmissions}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{setFailedSubmissions()}{setFailedSubmissions()}}
+{\footnotesize\ttfamily \label{class_output_a46b10f22f93219100cb031386b08f4c4} 
+void Output::\+set\+Failed\+Submissions (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \doxymbox{\hyperlink{structfailed_submission}{failed\+Submission}} $>$ \&}]{failsub}{}\end{DoxyParamCaption})}
+
+
+
+Updates the list of failed submissions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em failsub} & Updated list of failed submissions \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_output_a6f548914f6c74e610405886533df54c8}\index{Output@{Output}!setMaxFlow@{setMaxFlow}}
+\index{setMaxFlow@{setMaxFlow}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{setMaxFlow()}{setMaxFlow()}}
+{\footnotesize\ttfamily \label{class_output_a6f548914f6c74e610405886533df54c8} 
+void Output::\+set\+Max\+Flow (\begin{DoxyParamCaption}\item[{int}]{max\+Flow}{}\end{DoxyParamCaption})}
+
+
+
+Updates the maximum flow of the flow network. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Flow} & Updated maximum flow \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_output_ac2948c7939fcc821f6f87a26d20f953c}\index{Output@{Output}!setRiskAnalysisDone@{setRiskAnalysisDone}}
+\index{setRiskAnalysisDone@{setRiskAnalysisDone}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{setRiskAnalysisDone()}{setRiskAnalysisDone()}}
+{\footnotesize\ttfamily \label{class_output_ac2948c7939fcc821f6f87a26d20f953c} 
+void Output::\+set\+Risk\+Analysis\+Done (\begin{DoxyParamCaption}\item[{bool}]{ra}{}\end{DoxyParamCaption})}
+
+
+
+Updates the flag about whether risk analysis has been done or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ra} & True if risk analysis has been done \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_output_a74d4750b90597597821cf7169c7285b5}\index{Output@{Output}!sortAssignments@{sortAssignments}}
+\index{sortAssignments@{sortAssignments}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{sortAssignments()}{sortAssignments()}}
+{\footnotesize\ttfamily \label{class_output_a74d4750b90597597821cf7169c7285b5} 
+void Output::\+sort\+Assignments (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{sort\+By}{}\end{DoxyParamCaption})}
+
+
+
+Sorts the list of assignments by an attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sort\+By} & Name of the attribute \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_output_aaf783d632d89db480d4c1db3992d8cfd}\index{Output@{Output}!writeAToFile@{writeAToFile}}
+\index{writeAToFile@{writeAToFile}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{writeAToFile()}{writeAToFile()}}
+{\footnotesize\ttfamily \label{class_output_aaf783d632d89db480d4c1db3992d8cfd} 
+void Output::\+write\+ATo\+File (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Formats and writes assignment related data to an external file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file to write to \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_output_ae0136f4bd12a5292dad9a5bd8c358fad}\index{Output@{Output}!writeRAToFile@{writeRAToFile}}
+\index{writeRAToFile@{writeRAToFile}!Output@{Output}}
+\doxysubsubsection{\texorpdfstring{writeRAToFile()}{writeRAToFile()}}
+{\footnotesize\ttfamily \label{class_output_ae0136f4bd12a5292dad9a5bd8c358fad} 
+void Output::\+write\+RATo\+File (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Formats and writes risk analysis related data to an external file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file to write to \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+output.\+h\item 
+Output.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,65 @@
+\doxysection{output.\+h}
+\hypertarget{output_8h_source}{}\label{output_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ OUTPUT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ OUTPUT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Graph.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Data.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_assignment}{Assignment}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_assignment_a19c094cacc0df98064feef4ccd3553ee}{submissionId}};\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_assignment_a85fdbff1a85677bedfd965fbfa6e9925}{reviewerId}};\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{struct_assignment_a924ec992330d87433dabc08c5eb657dd}{domain}};\ }
+\DoxyCodeLine{00016\ \};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structfailed_submission}{failedSubmission}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{structfailed_submission_a7169cd78779a1d94b099b9ddeb3c0373}{submissionId}};\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{structfailed_submission_a5536564741b02f753b55228a86cc4d05}{domain}};\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ missingReviews;\ }
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_output}{Output}}\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<Assignment>\ assignments;\ }
+\DoxyCodeLine{00038\ \ \ \ \ std::vector<failedSubmission>\ failedSubmissions;\ }
+\DoxyCodeLine{00039\ \ \ \ \ std::vector<int>\ criticalReviewers;\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ riskAnalysisDone\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow\ =\ -\/1;\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ std::vector<Assignment>\ \doxymbox{\hyperlink{class_output_a541b39f3db478e9253ad5145f8173c14}{getAssignments}}();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_output_aa0ca69fdc4257893fbaa9de4d5258167}{setAssignments}}(\textcolor{keyword}{const}\ std::vector<Assignment>\ \&assignments);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ std::vector<failedSubmission>\ \doxymbox{\hyperlink{class_output_a9104de9159e1abb254455f733eaf4956}{getFailedSubmissions}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_output_a46b10f22f93219100cb031386b08f4c4}{setFailedSubmissions}}(\textcolor{keyword}{const}\ std::vector<failedSubmission>\ \&failsub);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_output_a74d4750b90597597821cf7169c7285b5}{sortAssignments}}(\textcolor{keyword}{const}\ std::string\ \&sortBy);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_output_afb06308dabe85ac17567e099a3e2cb75}{setCriticalReviewers}}(\textcolor{keyword}{const}\ std::vector<int>\&\ reviewers);}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\&\ \doxymbox{\hyperlink{class_output_aa14089e877d1fbe192d89a3a471a86f1}{getCriticalReviewers}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_output_ac2948c7939fcc821f6f87a26d20f953c}{setRiskAnalysisDone}}(\textcolor{keywordtype}{bool}\ ra);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_output_a91e4a9d8f896e5c4d10ca91b3a44135c}{getRiskAnalysisDone}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_output_a6f548914f6c74e610405886533df54c8}{setMaxFlow}}(\textcolor{keywordtype}{int}\ maxFlow);}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_output_a17551d525b3d8dbe5af731c5ac6f9c84}{getMaxFlow}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_output_a73803f7baebd6e1cab79d8cf171a7e0c}{generateOutput}}(\doxymbox{\hyperlink{class_graph}{Graph<int>}}\ *g,\ \doxymbox{\hyperlink{class_data}{Data}}\ \&data);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_output_aaf783d632d89db480d4c1db3992d8cfd}{writeAToFile}}(\textcolor{keyword}{const}\ std::string\ \&filename);}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_output_ae0136f4bd12a5292dad9a5bd8c358fad}{writeRAToFile}}(\textcolor{keyword}{const}\ std::string\ \&filename);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_output_a69c0f05a04c455f0c4375afb1006b6f9}{printOutput}}();}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_output_a654d20e314f17fe8052492325e0c00a6}{printRiskAnalysis}}();}
+\DoxyCodeLine{00134\ \};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00143\ \textcolor{keywordtype}{bool}\ sortBySubmissionId(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_assignment}{Assignment}}\ \&a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_assignment}{Assignment}}\ \&b);}
+\DoxyCodeLine{00151\ \textcolor{keywordtype}{bool}\ sortByReviewerId(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_assignment}{Assignment}}\ \&a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{struct_assignment}{Assignment}}\ \&b);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00160\ \textcolor{keywordtype}{bool}\ sortByFailedSubmissionId(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{structfailed_submission}{failedSubmission}}\ \&a,\ \textcolor{keyword}{const}\ \doxymbox{\hyperlink{structfailed_submission}{failedSubmission}}\ \&b);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

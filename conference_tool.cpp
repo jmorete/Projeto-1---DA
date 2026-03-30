@@ -8,8 +8,26 @@
 #include "id.h"
 #include "menu.h"
 
+/**
+ * @file conference_tool.cpp
+ * @brief Entry point of the application.
+ *
+ * Initializes the program and either just opens the menu or runs the full pipeline as specified in the input file.
+ */
+
 bool isBatchMode = false;
 
+/**
+ * @brief Program entry point.
+ *
+ * Initializes the application and checks the number of arguments to select the mode.
+ * If it has no arguments, it launches the main menu loop.
+ * If it is in batch mode, it loads input data, generates and analyzes
+ * reviewer–submission assignments using a maximum flow approach and
+ * writes the results to an external file.
+ *
+ * @return Exit status code
+ */
 int main(int argc, char *argv[]){
     if (argc == 1){
         Menu menu;

@@ -1,0 +1,19 @@
+\doxysection{error.\+h}
+\hypertarget{error_8h_source}{}\label{error_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ERROR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ERROR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{conference__tool_8cpp_afef54eeb45eb85504a54d5260d2686ac}{isBatchMode}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ printError(\textcolor{keyword}{const}\ std::string\&\ message)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{conference__tool_8cpp_afef54eeb45eb85504a54d5260d2686ac}{isBatchMode}})\ std::cerr\ <<\ message\ <<\ std::endl;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{else}\ std::cout\ <<\ \textcolor{stringliteral}{"{}[ERROR]\ "{}}\ <<\ message\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ERROR\_H}}
+
+\end{DoxyCode}
