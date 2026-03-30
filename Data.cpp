@@ -16,7 +16,6 @@ void Data::addReviewer(const Reviewer &reviewer) {
     this->reviewers.push_back(reviewer);
 }
 
-//todo
 void Data::removeReviewer(const int &reviewerId) {
     std::vector<Reviewer> newReviewers;
     for (const Reviewer &r : reviewers) {
@@ -132,7 +131,7 @@ void Data::printReviewers() const {
     cout << "\n=== Reviewers ===\n\n";
     cout << "Id, Name, E-mail, Primary Expertise, Secondary Expertise\n";
     for (const auto& rev : getReviewers()) {
-        cout << '-' << rev.id << ", " << rev.name << ", " << rev.email << ", " << rev.primaryExpertise;
+        cout << rev.id << ", " << rev.name << ", " << rev.email << ", " << rev.primaryExpertise;
         if (rev.secondaryExpertise != -1) cout << ", " << rev.secondaryExpertise;
         cout << '\n';
     }
@@ -150,6 +149,7 @@ void Data::printControls() const {
     cout << "\n=== Controls ===\n\n";
     cout << "Assignment Generation: " << getGenerateAssignments() << '\n';
     cout << "Type of Risk Analysis: " << getRiskAnalysis() << '\n';
+    cout << "Output file: " << getOutputFileName() << '\n';
     cout << '\n';
 }
 

@@ -36,45 +36,31 @@ private:
     std::string outputFileName = "output.csv"; // default filename
 public:
     std::vector<Reviewer> getReviewers() const;
-
     void setReviewers(const std::vector<Reviewer> &reviewers);
-
     void addReviewer(const Reviewer &reviewer);
-
-    void removeReviewer(const int &reviewer_id); //todo
+    void removeReviewer(const int &reviewer_id);
 
     std::vector<Submission> getSubmissions() const;
-
     void setSubmissions(const std::vector<Submission> &submissions);
-
     void addSubmission(const Submission &submission);
 
     int getMinReviewsPerSubmission() const;
-
     void setMinReviewsPerSubmission(int minReviewsPerSubmission);
-
     bool minReviewsPerSubmissionIsSet() const;
 
     int getMaxReviewsPerReviewer() const;
-
     void setMaxReviewsPerReviewer(int maxReviewsPerReviewer);
-
     bool maxReviewsPerReviewerIsSet() const;
 
     int getGenerateAssignments() const;
-
     void setGenerateAssignments(int generateAssignments);
-
     bool generateAssignmentsIsSet() const;
 
     int getRiskAnalysis() const;
-
     void setRiskAnalysis(int riskAnalysis);
-
     bool riskAnalysisIsSet() const;
 
     const std::string getOutputFileName() const;
-
     void setOutputFileName(const std::string &outputFileName);
 
     int getPrimaryDomain(int submissionId);
