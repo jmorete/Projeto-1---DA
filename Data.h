@@ -83,6 +83,7 @@ public:
     void printSubmissions() const;
     void printReviewers() const;
     void printParameters() const;
+    void printControls() const;
 };
 
 #endif 
