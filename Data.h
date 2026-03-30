@@ -107,7 +107,6 @@ public:
      * @param reviewer Reviewer to add to the list
      */
     void addReviewer(const Reviewer &reviewer);
-
     /**
      * @brief Removes a reviewer from the list of reviewers.
      * @param reviewer_id Identifier for the reviewer to remove
@@ -119,7 +118,6 @@ public:
      * @return Copy of the vector containing all the submissions in the data.
      */
     std::vector<Submission> getSubmissions() const;
-
     /**
      * @brief Updates the list of submissions.
      * @param submissions Updated list of submissions
@@ -137,13 +135,11 @@ public:
      * @return Minimum review count
      */
     int getMinReviewsPerSubmission() const;
-
     /**
      * @brief Updates the minimum number of reviews required per submission.
      * @param minReviewsPerSubmission Updated number
      */
     void setMinReviewsPerSubmission(int minReviewsPerSubmission);
-
     /**
      * @brief Checks if the minimum number of reviews required per submission is set.
      * @return True if the value is defined, false otherwise
@@ -155,13 +151,11 @@ public:
      * @return Maximum review capacity
      */
     int getMaxReviewsPerReviewer() const;
-
     /**
      * @brief Updates the maximum number of reviews a reviewer can review.
      * @param maxReviewsPerReviewer Updated number
      */
     void setMaxReviewsPerReviewer(int maxReviewsPerReviewer);
-
     /**
      * @brief Checks if the maximum number of reviews a reviewer can review is set.
      * @return True if the capacity is defined, false otherwise
@@ -173,13 +167,11 @@ public:
      * @return Control number
      */
     int getGenerateAssignments() const;
-
     /**
      * @brief Updates the control number for the assignment generation.
      * @param generateAssignments Updated number
      */
     void setGenerateAssignments(int generateAssignments);
-
     /**
      * @brief Checks if the control number for the assignment generation is set.
      * @return True if the control number is defined, false otherwise
@@ -191,13 +183,11 @@ public:
      * @return Type of risk analysis
      */
     int getRiskAnalysis() const;
-
     /**
      * @brief Updates the type of risk analysis to be carried out.
      * @param riskAnalysis Updated type
      */
     void setRiskAnalysis(int riskAnalysis);
-
     /**
      * @brief Checks if the type of risk analysis to be carried out is set.
      * @return True if the type of risk analysis is defined, false otherwise
@@ -209,7 +199,6 @@ public:
      * @return Name of the file
      */
     const std::string getOutputFileName() const;
-
     /**
      * @brief Updates the name of the output file.
      * @param outputFileName Updated name
@@ -247,4 +236,4 @@ public:
     void printControls() const;
 };
 
-#endif 
+#endif

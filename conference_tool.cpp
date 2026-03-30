@@ -37,7 +37,7 @@ int main(int argc, char *argv[]){
         isBatchMode = true;
         Data data;
         if (!parse(argv[2], data)){
-            return -1;
+            return 1;
         }
         Output out;
         Graph<int> *g = buildGraph(data);
