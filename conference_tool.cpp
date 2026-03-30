@@ -8,27 +8,29 @@
 #include "id.h"
 #include "menu.h"
 
+bool isBatchMode = false;
+
 int main(int argc, char *argv[]){
     if (argc == 1){
         Menu menu;
         menu.run();
     }
     else if (argc == 4){
+        isBatchMode = true;
         Data data;
         if (!parse(argv[2], data)){
             return -1;
         }
-        Graph<int> *g = buildGraph(data);
-        edmondsKarp(g, SOURCE_ID, SINK_ID);
-
         Output out;
+        Graph<int> *g = buildGraph(data);
+        out.setMaxFlow(edmondsKarp(g, SOURCE_ID, SINK_ID));
         out.generateOutput(g,data);
         if (data.getGenerateAssignments()) {
             out.writeAToFile(argv[3]);
         }
         if (data.getRiskAnalysis() == 1) {
             std::vector<int> critical;
-            int og_flow = g->getMaxFlow();
+            int og_flow = out.getMaxFlow();
 
             for (Reviewer r : data.getReviewers()) {
                 Data risk_data = data;
@@ -36,8 +38,7 @@ int main(int argc, char *argv[]){
 
                 // get maxFlow of altered set of reviewers
                 Graph<int> *risk_g = buildGraph(risk_data);
-                edmondsKarp(risk_g, SOURCE_ID, SINK_ID);
-                int risk_flow = risk_g->getMaxFlow();
+                int risk_flow = edmondsKarp(risk_g, SOURCE_ID, SINK_ID);
                 delete risk_g;
 
                 if (risk_flow < og_flow) {

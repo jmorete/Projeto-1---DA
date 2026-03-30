@@ -9,6 +9,8 @@ private:
     int state = 0;
     Data data = {};
     Output output = {};
+    bool writtenAssignments = false;
+    bool writtenRiskAnalysis = false;
 public:
     int getState() const;
     void setState(int state);
@@ -24,7 +26,7 @@ public:
 
     bool hasFile() const;
     bool hasAssigned();
-    bool hasRiskAnalysis();
+    bool hasRiskAnalysis() const;
 
     static std::string getInput();
     static void waitForEnter();
@@ -40,7 +42,6 @@ public:
     void viewOutputMenu();
     void exportMenu();
 
-    void printHeader() const;
     void display() const;
 };
 

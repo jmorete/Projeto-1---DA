@@ -145,8 +145,6 @@ protected:
     * Auxiliary function to set the "path" field to make a spanning tree.
     */
 
-    int maxFlow = 0;
-
 };
 
 void deleteMatrix(int **m, int n);
@@ -474,16 +472,6 @@ bool Graph<T>::addBidirectionalEdge(const T &sourc, const T &dest, double w) {
     e1->setReverse(e2);
     e2->setReverse(e1);
     return true;
-}
-
-template <class T>
-int Graph<T>::getMaxFlow() const {
-    return maxFlow;
-}
-
-template <class T>
-void Graph<T>::setMaxFlow(int maxFlow) {
-    this->maxFlow = maxFlow;
 }
 
 inline void deleteMatrix(int **m, int n) {

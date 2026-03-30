@@ -72,7 +72,7 @@ void augmentFlowAlongPath(Vertex<T> *s, Vertex<T> *t, double f) {
 
 // Main function implementing the Edmonds-Karp algorithm
 template <class T>
-void edmondsKarp(Graph<T> *g, int source, int target) {
+int edmondsKarp(Graph<T> *g, int source, int target) {
     // Find source and target vertices in the graph
     Vertex<T>* s = g->findVertex(source);
     Vertex<T>* t = g->findVertex(target);
@@ -94,7 +94,6 @@ void edmondsKarp(Graph<T> *g, int source, int target) {
         augmentFlowAlongPath(s, t, f);
         maxFlow += f;
     }
-    g->setMaxFlow(maxFlow);
 
     for (auto v : g->getVertexSet()) {
         auto adj = v->getAdj();
@@ -105,9 +104,9 @@ void edmondsKarp(Graph<T> *g, int source, int target) {
         }
     }
 
-    
+    return maxFlow;
 }
 
-template void edmondsKarp<int>(Graph<int> *g, int s, int t);
+template int edmondsKarp<int>(Graph<int> *g, int s, int t);
 
 

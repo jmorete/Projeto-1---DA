@@ -22,6 +22,7 @@ private:
     std::vector<failedSubmission> failedSubmissions;
     std::vector<int> criticalReviewers;
     bool riskAnalysisDone = false;
+    int maxFlow = -1;
 public:
     std::vector<Assignment> getAssignments();
     void setAssignments(const std::vector<Assignment> &assignments);
@@ -36,6 +37,9 @@ public:
 
     void setRiskAnalysisDone(bool ra);
     const bool getRiskAnalysisDone() const;
+
+    void setMaxFlow(int maxFlow);
+    int getMaxFlow() const;
 
     void generateOutput(Graph<int> *g, Data &data);
 

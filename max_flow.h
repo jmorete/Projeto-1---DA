@@ -4,7 +4,7 @@
 #define MAX_FLOW_H
 
 template <class T>
-void edmondsKarp(Graph<T> *g, int source, int sink);
+int edmondsKarp(Graph<T> *g, int source, int sink);
 
 #endif 
 

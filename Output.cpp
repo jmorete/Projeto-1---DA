@@ -1,3 +1,4 @@
+#include "error.h"
 #include "output.h"
 #include "id.h"
 #include <fstream>
@@ -43,6 +44,15 @@ void Output::setRiskAnalysisDone(bool ra) {
     riskAnalysisDone = ra;
 }
 
+int Output::getMaxFlow() const {
+    return maxFlow;
+}
+
+void Output::setMaxFlow(const int maxFlow) {
+    this->maxFlow = maxFlow;
+}
+
+
 void Output::sortAssignments(const std::string &sortBy) {
     if (sortBy == "submission") {
         std::sort(assignments.begin(), assignments.end(), sortBySubmissionId);
@@ -87,9 +97,9 @@ void Output::generateOutput(Graph<int> *g, Data &data) {
 }
 
 void Output::writeAToFile(const std::string &filename) { 
-    std::ofstream out(filename);
+    std::ofstream out(filename, std::ios::app);
     if (!out.is_open()) {
-        std::cerr << "Error opening file for writing: " << filename << std::endl;
+        printError("Error opening file for writing: " + filename);
         return;
     }
     if (!assignments.empty()) {
@@ -113,12 +123,17 @@ void Output::writeAToFile(const std::string &filename) {
             out << f.submissionId << ", " << f.domain << ", " << f.missingReviews << std::endl;
         }
     }
+    out << '\n';
 
     out.close(); // Close the output file
 }
 
 void Output::writeRAToFile(const std::string &filename) {
-    std::ofstream out(filename);
+    std::ofstream out(filename, std::ios::app);
+    if (!out.is_open()) {
+        printError("Error opening file for writing: " + filename);
+        return;
+    }
 
     if (!criticalReviewers.empty()) {
         out << "#Risk Analysis: 1" << std::endl;
@@ -128,7 +143,7 @@ void Output::writeRAToFile(const std::string &filename) {
             if (i==0) {out << r; i++;}
             else out << ", " << r;
         }
-        out << std::endl;
+        out << "\n\n";
     }
 
     out.close(); // Close the output file
@@ -158,7 +173,7 @@ void Output::printOutput() {
             std::cout << f.submissionId << ", " << f.domain << ", " << f.missingReviews << std::endl;
         }
     }
-    std::cout << '\n';
+    std::cout << "\n\n";
 }
 
 void Output::printRiskAnalysis() {

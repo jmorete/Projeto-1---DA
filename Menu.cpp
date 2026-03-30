@@ -35,6 +35,9 @@ Data Menu::getData() {
 
 void Menu::setData(const Data &data) {
     this->data = data;
+    setOutput({});
+    writtenAssignments = false;
+    writtenRiskAnalysis = false;
 }
 
 Output Menu::getOutput() {
@@ -43,6 +46,7 @@ Output Menu::getOutput() {
 
 void Menu::setOutput(const Output &out) {
     this->output = out;
+    //output.setCriticalReviewers({}); // reset risk analysis
 }
 
 bool Menu::hasFile() const {
@@ -62,7 +66,7 @@ bool Menu::hasAssigned() {
 }
 
 
-bool Menu::hasRiskAnalysis() {
+bool Menu::hasRiskAnalysis() const {
     if (!output.getRiskAnalysisDone()) {
         cout << "[ERROR] No risk analysis found. Please run the risk analysis first.\n\n";
         return false;
@@ -88,14 +92,11 @@ void Menu::waitForEnter() {
 
 
 void Menu::runAssignments() {
-    Graph<int> *g = buildGraph(data);
-    edmondsKarp(g, SOURCE_ID, SINK_ID);
     Output out;
+    Graph<int> *g = buildGraph(data);
+    out.setMaxFlow(edmondsKarp(g, SOURCE_ID, SINK_ID));
     out.generateOutput(g,data);
-
     setOutput(out);
-    output.setCriticalReviewers({}); // reset risk analysis
-
     delete g;
 
     cout << "[OK] Assignments successfully generated.\n\n";
@@ -105,11 +106,7 @@ void Menu::runAssignments() {
 
 void Menu::runRiskAnalysis() {
     std::vector<int> critical;
-    // get maxFlow of original set of reviewers
-    Graph<int> *og_g = buildGraph(data);
-    edmondsKarp(og_g, SOURCE_ID, SINK_ID);
-    int og_flow = og_g->getMaxFlow();
-    delete og_g;
+    int og_flow = output.getMaxFlow();
 
     for (Reviewer r : data.getReviewers()) {
         Data risk_data = data;
@@ -117,8 +114,7 @@ void Menu::runRiskAnalysis() {
 
         // get maxFlow of altered set of reviewers
         Graph<int> *risk_g = buildGraph(risk_data);
-        edmondsKarp(risk_g, SOURCE_ID, SINK_ID);
-        int risk_flow = risk_g->getMaxFlow();
+        int risk_flow = edmondsKarp(risk_g, SOURCE_ID, SINK_ID);
         delete risk_g;
 
         if (risk_flow < og_flow) {
@@ -155,8 +151,8 @@ void Menu::mainMenu() {
         setState(-1);
         return;
     }
-    if (i == "1") setState(1);
-    else if (i == "2") setState(2);
+    if (i == "1") state = 1;
+    else if (i == "2") state = 2;
     else if (i == "3") {
         if (!hasFile()) return;
         cout << "[INFO] Running using file configuration...\n\n";
@@ -171,35 +167,30 @@ void Menu::mainMenu() {
             cout << "[OK] Risk analysis successfully written to " << data.getOutputFileName() << ".\n\n";
         }
     }
-    else if (i == "4") setState(4);
-    else if (i == "5") setState(5);
-    else if (i == "6") setState(6);
+    else if (i == "4") state = 4;
+    else if (i == "5") state = 5;
+    else if (i == "6") state = 6;
     else cout << "[ERROR] Invalid option.\n\n";
 }
 
 void Menu::loadFileMenu() {
     string i = getInput();
     if (i == "0") {
-        setState(0);
-        return;
-    }
-    if (ifstream f(i); !f.is_open()) {
-        cout << "[ERROR] " << i << " doesn't exist. Please enter a valid name.\n\n";
+        state = 0;
         return;
     }
     cout << "[INFO] Parsing file...\n\n";
     Data d;
     if (!parse(i,d)) return;
     setData(d);
-    setFile(i);
-    setOutput({});
-    setState(0);
+    file = i;
+    state = 0;
     cout << "[OK] File loaded successfully.\n\n";
 }
 
 void Menu::viewDataMenu() {
     string i = getInput();
-    if (i == "0") setState(0);
+    if (i == "0") state = 0;
     else if (i == "1") {
         if (!hasFile()) return;
         data.printSubmissions();
@@ -220,14 +211,18 @@ void Menu::viewDataMenu() {
 
 void Menu::manualMenu() {
     string i = getInput();
-    if (i == "0") setState(0);
+    if (i == "0") state = 0;
     else if (i == "1") {
         if (!hasFile()) return;
         cout << "[INFO] Generating assignments...\n\n";
         runAssignments();
     }
     else if (i == "2") {
-        if (!hasFile()) return;
+        if (!hasFile() || !hasAssigned()) return;
+        if (!output.getFailedSubmissions().empty()) {
+            cout << "[ERROR] The assignment is incomplete.\n\n";
+            return;
+        }
         cout << "[INFO] Running Risk Analysis...\n\n";
         runRiskAnalysis();
     }
@@ -236,7 +231,7 @@ void Menu::manualMenu() {
 
 void Menu::viewOutputMenu() {
     string i = getInput();
-    if (i == "0") setState(0);
+    if (i == "0") state = 0;
     else if (i == "1") {
         if (!hasAssigned()) return;
         output.printOutput();
@@ -252,31 +247,36 @@ void Menu::viewOutputMenu() {
 
 void Menu::exportMenu() {
     string i = getInput();
-    if (i == "0") setState(0);
+    if (i == "0") state = 0;
     else if (i == "1") {
         if (!hasAssigned()) return;
-        output.writeAToFile(data.getOutputFileName()); 
+        if (writtenAssignments) {
+            cout << "[ERROR] Assignments already exist in this file.\n\n";
+            return;
+        }
+        output.writeAToFile(data.getOutputFileName());
+        writtenAssignments = true;
         cout << "[OK] Assignments successfully written to " << data.getOutputFileName() << ".\n\n";
     }
     else if (i == "2") {
         if (!hasRiskAnalysis()) return;
+        if (writtenRiskAnalysis) {
+            cout << "[ERROR] Risk Analysis already exists in this file.\n\n";
+            return;
+        }
         output.writeRAToFile(data.getOutputFileName());
+        writtenRiskAnalysis = true;
         cout << "[OK] Risk Analysis successfully written to " << data.getOutputFileName() << ".\n\n";
     }
     else cout << "[ERROR] Invalid option." << "\n\n";
 }
 
 
-void Menu::printHeader() const {
+void Menu::display() const {
     cout << "\n=======================================\n";
     cout << " Scientific Conference Assignment Tool\n";
     cout << "=======================================\n";
     cout << "Current file: " << (file.empty() ? "[none]" : file) << "\n\n";
-}
-
-
-void Menu::display() const {
-    printHeader();
     if (state == 0) {
         cout << "[DATA]\n";
         cout << "   1. Load Input File\n";

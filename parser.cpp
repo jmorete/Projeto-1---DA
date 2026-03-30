@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Data.h"
 #include "parser.h"
+#include "error.h"
 #include <stdexcept>
 #include <unordered_set>
 #include <utility>
@@ -83,7 +84,7 @@ bool parse(const std::string &filename, Data &data) {
     std::ifstream file(filename);
     std::vector<std::string> errors;
     if (!file.is_open()) {
-        std::cerr << "ERROR: Error opening file: " << filename << std::endl;
+        printError("Error opening file: " + filename);
         return false;
     }
     int lineNum = 0;
@@ -188,10 +189,11 @@ bool parse(const std::string &filename, Data &data) {
     validateData(tempData, errors);
 
     if (!errors.empty()){
-        std::cerr << "FILE REJECTED: The following issues were encountered:" << std::endl;
+        std::string message = "File rejected. The following issues were encountered:\n";
         for (const std::string &error : errors){
-            std::cerr << error << std::endl;
+            message += error + '\n';
         }
+        printError(message);
         return false;
     }
     data = std::move(tempData);
